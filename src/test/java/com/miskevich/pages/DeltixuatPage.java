@@ -27,6 +27,9 @@ public class DeltixuatPage extends BasePage {
     @FindBy(xpath = "//div[@class='app-title']")
     private WebElement checkMenu;
 
+    @FindBy(xpath = "//div[@class='d-flex align-items-center benchmark-selection']")
+    private WebElement benchmarkSelection;
+
     public boolean clickUser() {
         log.info("clickUser start");
         loginUser.click();
@@ -63,6 +66,11 @@ public class DeltixuatPage extends BasePage {
         menuElements.checkItem(MenuItem.HISTOGRAM);
         return true;
 
+    }
+
+    public boolean checkBenchmarkSelection(){
+        log.info("checkBenchmarkSelection start");
+        return benchmarkSelection.isDisplayed();
     }
 
     public DeltixuatPage(){

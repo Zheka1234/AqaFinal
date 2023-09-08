@@ -29,6 +29,7 @@ public class CaseLoginTest {
         assertTrue(deltixuatPage.clickPassword());
         assertTrue(deltixuatPage.buttonClick());
         assertTrue(deltixuatPage.checkSetting());
+        assertTrue(deltixuatPage.checkBenchmarkSelection());
         assertTrue(deltixuatPage.checkMenuElements());
 
 

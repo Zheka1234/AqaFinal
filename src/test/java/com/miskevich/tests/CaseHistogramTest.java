@@ -2,14 +2,13 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.HistogramPage;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class HistogramTest {
+public class CaseHistogramTest {
 
     HistogramPage histogramPage;
 

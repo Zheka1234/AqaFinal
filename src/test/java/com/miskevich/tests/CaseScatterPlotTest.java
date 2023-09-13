@@ -1,23 +1,21 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
-import com.miskevich.pages.ChatGridPage;
+import com.miskevich.pages.ScatterPlot;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class ChatTest {
+public class CaseScatterPlotTest {
 
-    ChatGridPage chatPage;
-
+    ScatterPlot scatterPlot;
 
     @BeforeMethod
     public void openDeltixuat() {
         BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
-        chatPage= new ChatGridPage();
-
+        scatterPlot = new ScatterPlot();
     }
 
     @AfterMethod
@@ -25,16 +23,13 @@ public class ChatTest {
         BrowserDriver.close();
     }
 
-
     @Test
-    public void testChat() throws InterruptedException {
+    public void loginTest(){
+        assertTrue(scatterPlot.clickUser());
+        assertTrue(scatterPlot.clickPassword());
+        assertTrue(scatterPlot.buttonClick());
+        assertTrue(scatterPlot.scatterClick());
 
-        assertTrue(chatPage.clickUser());
-        assertTrue(chatPage.clickPassword());
-        assertTrue(chatPage.buttonClick());
-        assertTrue(chatPage.chartClick());
-        assertTrue(chatPage.orderClick());
-        assertTrue(chatPage.linesClick());
 
 
 

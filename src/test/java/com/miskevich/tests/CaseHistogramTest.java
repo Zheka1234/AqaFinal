@@ -30,11 +30,13 @@ public class CaseHistogramTest {
     }
 
     @Test
-    public void testHistogram() {
+    public void testHistogram() throws InterruptedException {
         assertTrue(histogramPage.clickUser());
+        Thread.sleep(2000);
         assertTrue(histogramPage.histogramClick());
         List<WebElement> barContainers = BrowserDriver.getDriver().findElements(By.xpath("//*[contains(@class,'bars')]//*[contains(@class,'bar_container')]"));
         Assert.assertTrue(barContainers.size() > 0);
+        Thread.sleep(2000);
         barContainers.forEach(barContainer -> {
             WebElement bar = barContainer.findElement(By.xpath("./*[@class='bar']"));
 
@@ -42,6 +44,8 @@ public class CaseHistogramTest {
 
             actions.moveToElement(bar, -40, -40);
             actions.build().perform();
+            actions.click().build().perform();
+            ;
             By toolTipLocator = By.xpath("//*[@class='tooltip']");
 
             WebElement toolTipContainer = BrowserDriver.getDriver().findElement(toolTipLocator);
@@ -54,9 +58,8 @@ public class CaseHistogramTest {
             Actions actions2 = new Actions(BrowserDriver.getDriver());
 
             actions2.moveToElement(bar, -50, -50);
-            actions2.build().perform();
+            actions2.click().build().perform();
+
         });
-
-
     }
 }

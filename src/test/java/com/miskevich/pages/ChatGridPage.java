@@ -1,14 +1,11 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ChatGridPage extends BasePage{
-
-    Logger log = Logger.getLogger(DeltixuatPage.class);
+public class ChatGridPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Grid & chart')]")
     private WebElement openChat;
@@ -19,20 +16,20 @@ public class ChatGridPage extends BasePage{
     @FindBy(xpath = "//span[@class='chart-settings__title chart-mobile-title']")
     private WebElement linesClick;
 
-    public boolean chartClick(){
+    public boolean chartClick() {
         log.info("chartClick start");
         openChat.click();
         log.info("chartClick good");
         return openChat.isDisplayed();
     }
 
-    public boolean orderClick(){
+    public boolean orderClick() {
         orderClick.click();
         return orderClick.isDisplayed();
 
     }
 
-    public boolean linesClick(){
+    public boolean linesClick() {
         linesClick.click();
         return linesClick.isDisplayed();
 

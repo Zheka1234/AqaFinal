@@ -2,14 +2,11 @@ package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.enums.MenuItem;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DeltixuatPage extends BasePage {
-
-    Logger log = Logger.getLogger(DeltixuatPage.class);
 
     @FindBy(xpath = "//a[@href='/settings']")
     private WebElement settingButton;

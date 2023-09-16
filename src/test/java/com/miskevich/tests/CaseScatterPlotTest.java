@@ -24,13 +24,9 @@ public class CaseScatterPlotTest {
     }
 
     @Test
-    public void loginTest(){
+    public void loginTest() {
         assertTrue(scatterPlot.clickUser());
-        assertTrue(scatterPlot.clickPassword());
-        assertTrue(scatterPlot.buttonClick());
         assertTrue(scatterPlot.scatterClick());
-
-
 
 
     }

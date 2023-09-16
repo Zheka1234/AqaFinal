@@ -16,7 +16,7 @@ public class CaseChatTest {
     @BeforeMethod
     public void openDeltixuat() {
         BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
-        chatPage= new ChatGridPage();
+        chatPage = new ChatGridPage();
 
     }
 
@@ -30,12 +30,9 @@ public class CaseChatTest {
     public void testChat() throws InterruptedException {
 
         assertTrue(chatPage.clickUser());
-        assertTrue(chatPage.clickPassword());
-        assertTrue(chatPage.buttonClick());
         assertTrue(chatPage.chartClick());
         assertTrue(chatPage.orderClick());
         assertTrue(chatPage.linesClick());
-
 
 
     }

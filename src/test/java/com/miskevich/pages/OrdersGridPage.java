@@ -1,15 +1,12 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OrdersGridPage extends BasePage{
-
-    Logger log = Logger.getLogger(DeltixuatPage.class);
+public class OrdersGridPage extends BasePage {
 
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
     private WebElement clickFilter;
@@ -47,16 +44,16 @@ public class OrdersGridPage extends BasePage{
         return clickFilter.isDisplayed();
     }
 
-    public void getCliCkIdFilter(){
+    public void getCliCkIdFilter() {
         clickId.click();
     }
 
     public boolean displayIdFalse() {
         displayIdFalse.isDisplayed();
-        return displayIdFalse.isDisplayed() ;
+        return displayIdFalse.isDisplayed();
     }
 
-    public void tollPanel(){
+    public void tollPanel() {
         toolPanel.click();
         typeClick.click();
     }

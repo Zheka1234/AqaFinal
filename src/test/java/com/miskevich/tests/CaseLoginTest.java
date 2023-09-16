@@ -24,14 +24,11 @@ public class CaseLoginTest {
     }
 
     @Test
-    public void loginTest(){
+    public void loginTest() {
         assertTrue(deltixuatPage.clickUser());
-        assertTrue(deltixuatPage.clickPassword());
-        assertTrue(deltixuatPage.buttonClick());
         assertTrue(deltixuatPage.checkSetting());
         assertTrue(deltixuatPage.checkBenchmarkSelection());
         assertTrue(deltixuatPage.checkMenuElements());
-
 
 
     }

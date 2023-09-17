@@ -15,18 +15,18 @@ public class OrdersGridPage extends BasePage {
     private WebElement clickId;
 
     @FindBy(xpath = "//div[@col-id='orderId']")
-    private WebElement displayIdFalse;
+    private WebElement displayIdCheck;
 
     @FindBy(xpath = "//button[@title='Refresh']")
     private WebElement buttonRefresh;
 
-    @FindBy(xpath = "//div[@col-id='orderType']")
+    @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
     private WebElement displayTypeFalse;
 
     @FindBy(xpath = "//button[@ref='eToggleButton']")
     private WebElement toolPanel;
 
-    @FindBy(xpath = "//div[@class='ag-column-tool-panel-column']//span[@ref='eLabel'][text()='Type']")
+    @FindBy(xpath = "//*[@title='Type']/preceding-sibling::span")
     private WebElement typeClick;
 
     @FindBy(xpath = "//div[@col-id='orderId']")
@@ -35,11 +35,11 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//div[@col-id='orderId']//span[@ref='eMenu']")
     private WebElement columClick;
 
-    @FindBy(xpath = "//span[@class='ag-tab ag-tab-selected']")
-    private WebElement thirdTab;
-
-    @FindBy(xpath = "//div[@ref='tabBody']//span[@title='Type']")
+    @FindBy(xpath = "//span[@class='ag-icon ag-icon-columns']")
     private WebElement thirdTabTypeClick;
+
+    @FindBy(xpath = "//div[@class='ag-menu-column-select-wrapper']//*[@title='Id']/preceding-sibling::span")
+    private WebElement thirdTypeClick;
 
 
     public boolean getClickFilter() {
@@ -55,37 +55,40 @@ public class OrdersGridPage extends BasePage {
         clickId.click();
     }
 
-    public boolean displayIdFalse() {
-        displayIdFalse.isDisplayed();
-        return false;
+    public boolean displayIdCheck() {
+        displayIdCheck.isDisplayed();
+        return displayIdCheck.isDisplayed();
     }
-    public boolean displayIdTrue() {
-        displayIdFalse.isDisplayed();
+
+    public boolean tollPanel() {
+        toolPanel.click();
+        typeClick.click();
+        typeClick.click();
+        toolPanel.click();
         return true;
     }
 
-    public void tollPanel() {
-        toolPanel.click();
-        typeClick.click();
-    }
-
-    public void columClick() throws InterruptedException {
+    public boolean columClick() throws InterruptedException {
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(moveClick).perform();
         columClick.click();
         Thread.sleep(2000);
-
-
+        return true;
     }
 
-    public void columClickId() {
+    public boolean columClickId() {
         thirdTabTypeClick.click();
+        return true;
+    }
+
+    public boolean columClickSecond() {
+        thirdTypeClick.click();
+        return true;
     }
 
 
     public OrdersGridPage() {
+
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
-
-
 }

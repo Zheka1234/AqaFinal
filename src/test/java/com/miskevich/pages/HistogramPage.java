@@ -19,10 +19,12 @@ public class HistogramPage extends BasePage {
     private WebElement tool;
 
     public List<WebElement> getBars() {
+        log.info("getBars start");
         return bars;
     }
 
     public WebElement getTooltip() {
+        log.info("getTooltip start");
         return tool;
     }
 

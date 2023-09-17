@@ -14,11 +14,12 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//div[@class='ag-column-tool-panel-container']//*[@title='Id']/preceding-sibling::span")
     private WebElement clickId;
 
-    @FindBy(xpath = "//div[@col-id='orderId']")
+    @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
     private WebElement displayIdCheck;
 
-    @FindBy(xpath = "//button[@title='Refresh']")
-    private WebElement buttonRefresh;
+    @FindBy(xpath = "//div[@col-id='endTime']")
+    private WebElement displayIdCheckFalse;
+
 
     @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
     private WebElement displayTypeFalse;
@@ -26,8 +27,8 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//button[@ref='eToggleButton']")
     private WebElement toolPanel;
 
-    @FindBy(xpath = "//*[@title='Type']/preceding-sibling::span")
-    private WebElement typeClick;
+    @FindBy(xpath = "//*[@title='Id']/preceding-sibling::span")
+    private WebElement typeClickId;
 
     @FindBy(xpath = "//div[@col-id='orderId']")
     private WebElement moveClick;
@@ -43,32 +44,44 @@ public class OrdersGridPage extends BasePage {
 
 
     public boolean getClickFilter() {
+        log.info("getClickFilter start");
         clickFilter.click();
         return clickFilter.isDisplayed();
     }
 
-    public void clickRefresh() {
-        buttonRefresh.click();
-    }
 
     public void getCliCkIdFilter() {
+        log.info("getCliCkIdFilter start");
         clickId.click();
     }
 
     public boolean displayIdCheck() {
+        log.info("displayIdCheck start");
         displayIdCheck.isDisplayed();
         return displayIdCheck.isDisplayed();
     }
 
-    public boolean tollPanel() {
+    public boolean displayIdCheckFalse() {
+        log.info("displayIdCheckFalse start");
+        displayIdCheckFalse.isDisplayed();
+        return false;
+    }
+
+    public void tollPanelClickOff() {
+        log.info("tollPanelClickOff start");
         toolPanel.click();
-        typeClick.click();
-        typeClick.click();
+        typeClickId.click();
+    }
+
+    public void tollPanelClickOn() {
+        log.info("tollPanelClickOn start");
+        typeClickId.click();
         toolPanel.click();
-        return true;
+
     }
 
     public boolean columClick() throws InterruptedException {
+        log.info("columClick start");
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(moveClick).perform();
         columClick.click();
@@ -77,14 +90,14 @@ public class OrdersGridPage extends BasePage {
     }
 
     public boolean columClickId() {
+        log.info("columClickId start");
         thirdTabTypeClick.click();
         return true;
     }
 
-    public boolean columClickSecond() {
+    public void columClickSecond() {
+        log.info("columClickSecond start");
         thirdTypeClick.click();
-        thirdTypeClick.click();
-        return true;
     }
 
 

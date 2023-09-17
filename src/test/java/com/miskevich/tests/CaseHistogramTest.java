@@ -2,6 +2,7 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.HistogramPage;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +34,10 @@ public class CaseHistogramTest {
         BrowserDriver.close();
     }
 
+    @Description("Hover over a bar.\n" +
+            "Check boundaries and number of orders are displayed.\n" +
+            "Click on the bar.\n" +
+            "Repeat steps 1-4 for all bars.")
     @Test
     public void testHistogram() throws InterruptedException {
         assertTrue(histogramPage.clickUser());

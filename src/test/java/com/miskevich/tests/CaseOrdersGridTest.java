@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class CaseOrdersGridTest {
@@ -34,18 +35,26 @@ public class CaseOrdersGridTest {
         assertTrue(chatGridPage.chartClick());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
-//        ordersGridPage.clickRefresh();
+        ordersGridPage.clickRefresh();
 //        assertFalse(ordersGridPage.displayIdCheck());
+        ordersGridPage.getCliCkIdFilter();
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
-//        ordersGridPage.clickRefresh();
+        ordersGridPage.clickRefresh();
 //        assertTrue(ordersGridPage.displayIdCheck());
 
         assertTrue(ordersGridPage.tollPanel());
 
 
         assertTrue(ordersGridPage.columClick());
+
         assertTrue(ordersGridPage.columClickId());
+
         assertTrue(ordersGridPage.columClickSecond());
+
+        assertTrue(ordersGridPage.columClickSecond());
+
     }
+
+
 }

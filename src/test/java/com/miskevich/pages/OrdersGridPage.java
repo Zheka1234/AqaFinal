@@ -83,6 +83,7 @@ public class OrdersGridPage extends BasePage {
 
     public boolean columClickSecond() {
         thirdTypeClick.click();
+        thirdTypeClick.click();
         return true;
     }
 

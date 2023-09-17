@@ -46,7 +46,7 @@ public class CaseHistogramTest {
 
             Actions actions = new Actions(BrowserDriver.getDriver());
 
-            actions.moveToElement(bar, -40, -40);
+            actions.moveToElement(bar, -50, -50);
             actions.build().perform();
             actions.click().build().perform();
 

@@ -11,11 +11,14 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
     private WebElement clickFilter;
 
-    @FindBy(xpath = "//div[@class='ag-column-tool-panel-container']//span[@ref='eLabel'][text()='Id']")
+    @FindBy(xpath = "//div[@class='ag-column-tool-panel-container']//*[@title='Id']/preceding-sibling::span")
     private WebElement clickId;
 
     @FindBy(xpath = "//div[@col-id='orderId']")
     private WebElement displayIdFalse;
+
+    @FindBy(xpath = "//button[@title='Refresh']")
+    private WebElement buttonRefresh;
 
     @FindBy(xpath = "//div[@col-id='orderType']")
     private WebElement displayTypeFalse;
@@ -44,13 +47,21 @@ public class OrdersGridPage extends BasePage {
         return clickFilter.isDisplayed();
     }
 
+    public void clickRefresh() {
+        buttonRefresh.click();
+    }
+
     public void getCliCkIdFilter() {
         clickId.click();
     }
 
     public boolean displayIdFalse() {
         displayIdFalse.isDisplayed();
-        return displayIdFalse.isDisplayed();
+        return false;
+    }
+    public boolean displayIdTrue() {
+        displayIdFalse.isDisplayed();
+        return true;
     }
 
     public void tollPanel() {
@@ -63,8 +74,7 @@ public class OrdersGridPage extends BasePage {
         actions.moveToElement(moveClick).perform();
         columClick.click();
         Thread.sleep(2000);
-        thirdTab.click();
-        Thread.sleep(2000);
+
 
     }
 

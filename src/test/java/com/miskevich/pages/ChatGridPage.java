@@ -10,17 +10,23 @@ public class ChatGridPage extends AuthorizationPage {
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Grid & chart')]")
     private WebElement openChat;
 
-    @FindBy(xpath = "//div[@row-index='3']//div[@class='ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-value']")
+    @FindBy(xpath = "//div[@row-index='5']//div[@class='ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-value']")
     private WebElement orderClick;
 
     @FindBy(xpath = "//span[@class='chart-settings__title chart-mobile-title']")
     private WebElement linesClick;
 
-    @FindBy(xpath = "//div[@class='d-flex flex-wrap']//div[@class='d-flex align-items-center']//div[@class='legend-container__item-value']")
+    @FindBy(xpath = "//span[text()='Mid price']/following-sibling::div[@Class='legend-container__item-value']")
     private WebElement midPrice;
 
-    @FindBy(xpath = "//div[@class='d-flex flex-wrap']//div[@class='d-flex align-items-center']//div[@class='legend-container__item-value']")
+    @FindBy(css = "g[class$='MID_PRICE']>text:last-child")
     private WebElement mid;
+
+    @FindBy(xpath = "//span[text()='Avg fill price']/following-sibling::div[@Class='legend-container__item-value']")
+    private WebElement avgPrice;
+
+    @FindBy(xpath = "//div[@class='chart-view__info mb-2 hidden-text']")
+    private WebElement lineUnderChat;
 
 
     public boolean chartClick() {
@@ -39,6 +45,26 @@ public class ChatGridPage extends AuthorizationPage {
         linesClick.click();
         return linesClick.isDisplayed();
 
+    }
+
+    public double getMidPrice() {
+        return Double.parseDouble(midPrice.getText());
+    }
+
+    public double getMidPriceTooltip() {
+        return Double.parseDouble(mid.getText());
+    }
+
+    public double getAvgPrice() {
+        return Double.parseDouble(avgPrice.getText());
+    }
+
+    public double underChat() {
+        String temp = lineUnderChat.getText();
+        int index = temp.indexOf("Exec price:");
+        int index2 = temp.indexOf(",", index + 11);
+        String result = temp.substring(index + 11, index2);
+        return Double.parseDouble(result);
     }
 
     public ChatGridPage() {

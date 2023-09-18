@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class CaseChatTest {
@@ -30,10 +31,11 @@ public class CaseChatTest {
     public void testChat() throws InterruptedException {
 
         assertTrue(chatPage.clickUser());
+        Thread.sleep(3000);
         assertTrue(chatPage.chartClick());
         chatPage.orderClick();
-        assertTrue(chatPage.linesClick());
-        Thread.sleep(5000);
+        assertEquals(chatPage.getMidPriceTooltip(),chatPage.getMidPrice());
+        assertEquals(chatPage.getAvgPrice(),chatPage.underChat());
 
 
     }

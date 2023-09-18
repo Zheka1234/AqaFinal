@@ -1,6 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.ScatterPlot;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,10 +17,13 @@ public class CaseScatterPlotTest {
 
     ScatterPlot scatterPlot;
 
+    DeltixuatPage deltixuatPage;
+
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         scatterPlot = new ScatterPlot();
+        deltixuatPage = new DeltixuatPage();
     }
 
     @AfterMethod
@@ -40,7 +44,7 @@ public class CaseScatterPlotTest {
 
     @Test(dataProvider = "attributeNames")
     public void scatterPlotTest(String xAttributeName, String yAttributeName) throws InterruptedException, IOException {
-        scatterPlot.clickUser();
+        deltixuatPage.clickUser();
         Thread.sleep(3000);
         scatterPlot.scatterClick();
         scatterPlot.xAttributeClick(xAttributeName);

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class OrdersGridPage extends AuthorizationPage {
+public class OrdersGridPage extends BasePage {
 
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
     private WebElement clickFilter;

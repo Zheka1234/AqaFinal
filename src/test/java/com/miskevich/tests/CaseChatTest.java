@@ -2,6 +2,7 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
+import com.miskevich.pages.DeltixuatPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,11 +17,14 @@ public class CaseChatTest {
 
     ChatGridPage chatPage;
 
+    DeltixuatPage deltixuatPage;
+
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         chatPage = new ChatGridPage();
+        deltixuatPage = new DeltixuatPage();
 
     }
 
@@ -33,7 +37,7 @@ public class CaseChatTest {
     @Test
     public void testChat() throws InterruptedException {
 
-        assertTrue(chatPage.clickUser());
+        assertTrue(deltixuatPage.clickUser());
         Thread.sleep(3000);
         assertTrue(chatPage.chartClick());
         chatPage.orderClick();

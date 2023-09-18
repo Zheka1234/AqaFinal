@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class DeltixuatPage extends AuthorizationPage {
+public class DeltixuatPage extends BasePage {
 
     @FindBy(xpath = "//a[@href='/settings']")
     private WebElement settingButton;
@@ -18,6 +18,26 @@ public class DeltixuatPage extends AuthorizationPage {
 
     @FindBy(xpath = "//div[@class='d-flex align-items-center benchmark-selection']")
     private WebElement benchmarkSelection;
+
+    @FindBy(xpath = "//input[@formcontrolname='username']")
+    private WebElement loginUser;
+
+    @FindBy(xpath = "//input[@formcontrolname='password']")
+    private WebElement passwordUser;
+
+    @FindBy(xpath = "//button")
+    private WebElement button;
+
+    public boolean clickUser() {
+        log.info("clickUser start");
+        loginUser.click();
+        loginUser.sendKeys("selenium_chrome");
+        passwordUser.click();
+        passwordUser.sendKeys("Axa@Demo");
+        button.click();
+        log.info("clickUser good");
+        return true;
+    }
 
 
     public boolean checkSetting() {

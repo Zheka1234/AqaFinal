@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class ScatterPlot extends AuthorizationPage {
+public class ScatterPlot extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Scatter-plot')]")
     private WebElement openScatter;
@@ -28,12 +28,6 @@ public class ScatterPlot extends AuthorizationPage {
     @FindBy(xpath = "//*[@class='scatter-plot-y-label']")
     private WebElement yLabel;
 
-    @FindBy(xpath = "//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Exec size')]")
-    public WebElement checkX;
-
-    @FindBy(xpath = "//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Size')]")
-    public WebElement checkY;
-
     public boolean scatterClick() {
         log.info("scatterClick start");
         openScatter.click();
@@ -41,25 +35,15 @@ public class ScatterPlot extends AuthorizationPage {
         return openScatter.isDisplayed();
     }
 
-    public void xAttributeClick() {
-
-        xAttribute.click();
-        checkX.click();
-    }
-
-    public void yAttributeClick() {
-
-        yAttribute.click();
-        checkY.click();
-    }
-
-    public boolean checkLabel(){
+    public boolean checkLabel() {
+        log.info("checkLabel start");
         xLabel.isDisplayed();
         yLabel.isDisplayed();
         return true;
     }
 
     public void xAttributeClick(String xAttributeText) throws IOException {
+        log.info("xAttributeClick start");
         xAttribute.click();
         WebElement xAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + xAttributeText + "')]"));
@@ -67,6 +51,7 @@ public class ScatterPlot extends AuthorizationPage {
     }
 
     public void yAttributeClick(String yAttributeText) throws IOException {
+        log.info("yAttributeClick start");
         yAttribute.click();
         WebElement yAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + yAttributeText + "')]"));

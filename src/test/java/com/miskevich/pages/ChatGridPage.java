@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class ChatGridPage extends AuthorizationPage {
+public class ChatGridPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Grid & chart')]")
     private WebElement openChat;
@@ -50,18 +50,23 @@ public class ChatGridPage extends AuthorizationPage {
     }
 
     public double getMidPrice() {
+        log.info("getMidPrice start");
         return Double.parseDouble(midPrice.getText());
     }
 
     public double getMidPriceTooltip() {
+        log.info("getMidPriceTooltip start");
+
         return Double.parseDouble(mid.getText());
     }
 
     public double getAvgPrice() {
+        log.info("getAvgPrice start");
         return Double.parseDouble(avgPrice.getText());
     }
 
     public double underChat() {
+        log.info("underChat start");
         String temp = lineUnderChat.getText();
         int index = temp.indexOf("Exec price:");
         int index2 = temp.indexOf(",", index + 11);

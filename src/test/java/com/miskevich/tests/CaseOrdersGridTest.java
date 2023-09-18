@@ -2,6 +2,7 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
+import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.OrdersGridPage;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
@@ -20,11 +21,14 @@ public class CaseOrdersGridTest {
 
     ChatGridPage chatGridPage;
 
+    DeltixuatPage deltixuatPage;
+
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         ordersGridPage = new OrdersGridPage();
         chatGridPage = new ChatGridPage();
+        deltixuatPage = new DeltixuatPage();
     }
 
     @AfterMethod
@@ -42,7 +46,7 @@ public class CaseOrdersGridTest {
     @Test
     public void testOrdersGridFilterColumns() throws InterruptedException, IOException {
 
-        assertTrue(ordersGridPage.clickUser());
+        assertTrue(deltixuatPage.clickUser());
         assertTrue(chatGridPage.chartClick());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();

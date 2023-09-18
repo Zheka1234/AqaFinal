@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class HistogramPage extends AuthorizationPage {
+public class HistogramPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Histogram')]")
     private WebElement openHistogram;

@@ -1,6 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.HistogramPage;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
@@ -20,6 +21,8 @@ public class CaseHistogramTest {
 
     HistogramPage histogramPage;
 
+    DeltixuatPage deltixuatPage;
+
     private String COUNT = "Count: \\d+";
 
     private String AVG = "Avg fill price: [\\[,\\(]\\d+\\.\\d+, \\d+\\.\\d+[),\\]]";
@@ -29,6 +32,7 @@ public class CaseHistogramTest {
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         histogramPage = new HistogramPage();
+        deltixuatPage = new DeltixuatPage();
     }
 
     @AfterMethod
@@ -42,7 +46,7 @@ public class CaseHistogramTest {
             "Repeat steps 1-4 for all bars.")
     @Test
     public void testHistogram() throws InterruptedException {
-        assertTrue(histogramPage.clickUser());
+        assertTrue(deltixuatPage.clickUser());
         Thread.sleep(2000);
         assertTrue(histogramPage.histogramClick());
         List<WebElement> barContainers = histogramPage.getBars();

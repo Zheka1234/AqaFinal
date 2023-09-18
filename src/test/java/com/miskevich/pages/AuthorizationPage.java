@@ -5,9 +5,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BasePage {
+public class AuthorizationPage {
 
-    Logger log = Logger.getLogger(BasePage.class);
+    Logger log = Logger.getLogger(AuthorizationPage.class);
 
     @FindBy(xpath = "//input[@formcontrolname='username']")
     private WebElement loginUser;

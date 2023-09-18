@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OrdersGridPage extends BasePage {
+public class OrdersGridPage extends AuthorizationPage {
 
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
     private WebElement clickFilter;

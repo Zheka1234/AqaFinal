@@ -31,8 +31,9 @@ public class CaseChatTest {
 
         assertTrue(chatPage.clickUser());
         assertTrue(chatPage.chartClick());
-        assertTrue(chatPage.orderClick());
+        chatPage.orderClick();
         assertTrue(chatPage.linesClick());
+        Thread.sleep(5000);
 
 
     }

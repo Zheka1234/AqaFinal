@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 public class HistogramPage extends AuthorizationPage {
@@ -35,7 +36,7 @@ public class HistogramPage extends AuthorizationPage {
         return openHistogram.isDisplayed();
     }
 
-    public HistogramPage() {
+    public HistogramPage() throws IOException {
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
 

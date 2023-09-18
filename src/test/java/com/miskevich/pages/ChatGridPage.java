@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class ChatGridPage extends AuthorizationPage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Grid & chart')]")
@@ -67,7 +69,7 @@ public class ChatGridPage extends AuthorizationPage {
         return Double.parseDouble(result);
     }
 
-    public ChatGridPage() {
+    public ChatGridPage() throws IOException {
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
 

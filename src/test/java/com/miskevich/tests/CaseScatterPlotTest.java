@@ -8,13 +8,17 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.io.IOException;
+
+import static com.miskevich.driver.BrowserDriver.getMyProperties;
+
 public class CaseScatterPlotTest {
 
     ScatterPlot scatterPlot;
 
     @BeforeMethod
-    public void openDeltixuat() {
-        BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
+    public void openDeltixuat() throws IOException {
+        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         scatterPlot = new ScatterPlot();
     }
 
@@ -35,7 +39,7 @@ public class CaseScatterPlotTest {
     }
 
     @Test(dataProvider = "attributeNames")
-    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws InterruptedException {
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws InterruptedException, IOException {
         scatterPlot.clickUser();
         Thread.sleep(3000);
         scatterPlot.scatterClick();

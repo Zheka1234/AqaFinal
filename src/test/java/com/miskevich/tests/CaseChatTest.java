@@ -6,6 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
+import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -15,8 +18,8 @@ public class CaseChatTest {
 
 
     @BeforeMethod
-    public void openDeltixuat() {
-        BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
+    public void openDeltixuat() throws IOException {
+        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         chatPage = new ChatGridPage();
 
     }

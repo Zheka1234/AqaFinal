@@ -7,6 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
+import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertTrue;
 
 public class CaseLoginTest {
@@ -14,8 +17,8 @@ public class CaseLoginTest {
     DeltixuatPage deltixuatPage;
 
     @BeforeMethod
-    public void openDeltixuat() {
-        BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
+    public void openDeltixuat() throws IOException {
+        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         deltixuatPage = new DeltixuatPage();
     }
 
@@ -31,7 +34,7 @@ public class CaseLoginTest {
             "Benchmark Selector control\n" +
             "Application Toolbar with Summary, Grid & chart, Histogram, Scatter-plot and Reports tabs")
     @Test
-    public void loginTest() {
+    public void loginTest() throws IOException {
         assertTrue(deltixuatPage.clickUser());
         assertTrue(deltixuatPage.checkSetting());
         assertTrue(deltixuatPage.checkBenchmarkSelection());

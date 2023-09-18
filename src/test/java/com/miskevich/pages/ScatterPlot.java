@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class ScatterPlot extends AuthorizationPage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Scatter-plot')]")
@@ -57,21 +59,21 @@ public class ScatterPlot extends AuthorizationPage {
         return true;
     }
 
-    public void xAttributeClick(String xAttributeText) {
+    public void xAttributeClick(String xAttributeText) throws IOException {
         xAttribute.click();
         WebElement xAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + xAttributeText + "')]"));
         xAttributeElement.click();
     }
 
-    public void yAttributeClick(String yAttributeText) {
+    public void yAttributeClick(String yAttributeText) throws IOException {
         yAttribute.click();
         WebElement yAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + yAttributeText + "')]"));
         yAttributeElement.click();
     }
 
-    public ScatterPlot() {
+    public ScatterPlot() throws IOException {
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
 }

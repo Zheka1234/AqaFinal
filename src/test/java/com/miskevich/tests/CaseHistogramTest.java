@@ -10,8 +10,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.List;
 
+import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertTrue;
 
 public class CaseHistogramTest {
@@ -24,8 +26,8 @@ public class CaseHistogramTest {
 
 
     @BeforeMethod
-    public void openDeltixuat() {
-        BrowserDriver.getDriver().get("https://app.tca.deltixuat.com");
+    public void openDeltixuat() throws IOException {
+        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         histogramPage = new HistogramPage();
     }
 
@@ -49,11 +51,16 @@ public class CaseHistogramTest {
         barContainers.forEach(barContainer -> {
             WebElement bar = barContainer.findElement(By.xpath("./*[@class='bar']"));
 
-            Actions actions = new Actions(BrowserDriver.getDriver());
+            Actions actions = null;
+            try {
+                actions = new Actions(BrowserDriver.getDriver());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
-            actions.moveToElement(bar, -50, -50);
+            actions.moveToElement(bar, -20, -20);
             actions.build().perform();
-            actions.click().build().perform();
+            actions.build().perform();
 
             WebElement toolTipContainer = histogramPage.getTooltip();
 
@@ -62,10 +69,15 @@ public class CaseHistogramTest {
             assertTrue(borders.matches(AVG), borders);
             assertTrue(count.matches(COUNT), count);
 
-            Actions actions2 = new Actions(BrowserDriver.getDriver());
+            Actions actions2 = null;
+            try {
+                actions2 = new Actions(BrowserDriver.getDriver());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
             actions2.moveToElement(bar, -50, -50);
-            actions2.click().build().perform();
+            actions2.build().perform();
 
         });
     }

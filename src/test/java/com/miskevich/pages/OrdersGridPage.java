@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class OrdersGridPage extends AuthorizationPage {
 
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
@@ -80,7 +82,7 @@ public class OrdersGridPage extends AuthorizationPage {
 
     }
 
-    public boolean columClick() throws InterruptedException {
+    public boolean columClick() throws InterruptedException, IOException {
         log.info("columClick start");
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(moveClick).perform();
@@ -101,7 +103,7 @@ public class OrdersGridPage extends AuthorizationPage {
     }
 
 
-    public OrdersGridPage() {
+    public OrdersGridPage() throws IOException {
 
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }

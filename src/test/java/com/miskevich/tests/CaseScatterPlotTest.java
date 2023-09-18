@@ -4,9 +4,9 @@ import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ScatterPlot;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertTrue;
+import org.testng.asserts.SoftAssert;
 
 public class CaseScatterPlotTest {
 
@@ -23,11 +23,28 @@ public class CaseScatterPlotTest {
         BrowserDriver.close();
     }
 
-    @Test
-    public void loginTest() {
-        assertTrue(scatterPlot.clickUser());
-        assertTrue(scatterPlot.scatterClick());
 
+    @DataProvider(name = "attributeNames")
+    public Object[][] attributeNamesProvider() {
+        return new Object[][]{
+                {"Size", "Exec size"},
+                {"Exec size", "Num of executions"},
+                {"Avg fill price", "Execution price volatility"},
 
+        };
     }
+
+    @Test(dataProvider = "attributeNames")
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws InterruptedException {
+        scatterPlot.clickUser();
+        Thread.sleep(3000);
+        scatterPlot.scatterClick();
+        scatterPlot.xAttributeClick(xAttributeName);
+        scatterPlot.yAttributeClick(yAttributeName);
+        SoftAssert soft = new SoftAssert();
+        soft.assertTrue(scatterPlot.checkLabel());
+        soft.assertAll();
+    }
+
+
 }

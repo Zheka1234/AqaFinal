@@ -81,7 +81,7 @@ public class CaseHistogramTest {
             }
 
             actions2.moveToElement(bar, -50, -50);
-            actions2.build().perform();
+            actions2.click().build().perform();
 
         });
     }

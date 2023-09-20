@@ -21,7 +21,6 @@ public class CaseScatterPlotTest {
     DeltixuatPage deltixuatPage;
 
 
-
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
@@ -56,15 +55,28 @@ public class CaseScatterPlotTest {
             "name of the Y-axis is changed to Y Attribute\n" +
             "Repeat steps 1-4 for all attributes.")
     @Test(dataProvider = "attributeNames")
-    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws InterruptedException, IOException {
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException, InterruptedException {
         deltixuatPage.clickUser();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         scatterPlot.scatterClick();
+        Thread.sleep(2000);
+        String initialXAxis = scatterPlot.getXAxis();
+        String initialYAxis = scatterPlot.getYAxis();
+        Thread.sleep(2000);
         scatterPlot.xAttributeClick(xAttributeName);
+        Thread.sleep(2000);
         scatterPlot.yAttributeClick(yAttributeName);
         SoftAssert soft = new SoftAssert();
+        Thread.sleep(2000);
         soft.assertTrue(scatterPlot.getBubbles());
-        soft.assertEquals(scatterPlot.checkLabel(),scatterPlot.checkName());
+        soft.assertEquals(scatterPlot.checkLabel(), scatterPlot.checkName());
+
+
+        String updatedXAxis = scatterPlot.getXAxis();
+        String updatedYAxis = scatterPlot.getYAxis();
+
+        soft.assertNotEquals(initialXAxis, updatedXAxis, "X-axis values are not updated");
+        soft.assertNotEquals(initialYAxis, updatedYAxis, "Y-axis values are not updated");
         soft.assertAll();
     }
 }

@@ -32,8 +32,12 @@ public class ScatterPlot extends BasePage {
     @FindBy(css = "g[class='x axis']")
     private WebElement xAxis;
 
+    //    //*[@class='x axis']/*[@class]/*[2]
     @FindBy(css = "g[class='y axis']")
     private WebElement yAxis;
+
+    @FindBy(css = "//a[contains(text(),'10')]")
+    private WebElement checkInterval;
 
 
     @FindBy(xpath = "//*[contains(@class,'scatter-plot-container')]//*[contains(@class,'scatter_element')]")
@@ -45,16 +49,18 @@ public class ScatterPlot extends BasePage {
         return true;
     }
 
-    public boolean getXAxis() {
-        log.info("getBubbles start");
-        xAxis.getText();
-        return true;
+    public void setInterval(int value) {
+
     }
 
-    public boolean getYAxis() {
-        log.info("getBubbles start");
-        yAxis.getText();
-        return true;
+    public String getXAxis() {
+        log.warn("X axis remains the same" + xAxis);
+        return xAxis.getText();
+    }
+
+    public String getYAxis() {
+        log.warn("Y axis remains the same" + yAxis);
+        return yAxis.getText();
     }
 
 
@@ -74,7 +80,7 @@ public class ScatterPlot extends BasePage {
 
 
     public void xAttributeClick(String xAttributeText) throws IOException {
-        log.info("xAttributeClick start");
+        log.info("X the attribute has not changed" + xAttributeText);
         xAttribute.click();
         WebElement xAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + xAttributeText + "')]"));
@@ -83,14 +89,14 @@ public class ScatterPlot extends BasePage {
     }
 
     public void yAttributeClick(String yAttributeText) throws IOException {
-        log.info("yAttributeClick start");
+        log.info("Y the attribute has not changed" + yAttributeText);
         yAttribute.click();
         WebElement yAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + yAttributeText + "')]"));
         yAttributeElement.click();
     }
 
-    public boolean checkName(){
+    public boolean checkName() {
         log.info("checkName start");
         xAttribute.getText();
         yAttribute.getText();

@@ -1,6 +1,7 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,6 +19,27 @@ public class HistogramPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='tooltip']")
     private WebElement tool;
+
+    @FindBy(xpath = "./*[@class='bar']")
+    private WebElement barElement;
+
+    @FindBy(xpath = "./div[1]")
+    private WebElement bordersTextElement;
+
+    @FindBy(xpath = "./div[2]")
+    private WebElement countTextElement;
+
+    public WebElement getBarElement(WebElement barContainer) {
+        return barContainer.findElement(By.xpath("./*[@class='bar']"));
+    }
+
+    public String getBordersText() {
+        return tool.findElement(By.xpath("./div[1]")).getText();
+    }
+
+    public String getCountText() {
+        return tool.findElement(By.xpath("./div[2]")).getText();
+    }
 
     public List<WebElement> getBars() {
         log.info("getBars start");

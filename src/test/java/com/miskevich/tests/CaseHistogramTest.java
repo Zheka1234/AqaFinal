@@ -4,7 +4,6 @@ import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.HistogramPage;
 import jdk.jfr.Description;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
@@ -53,7 +52,7 @@ public class CaseHistogramTest {
         assertTrue(barContainers.size() > 0);
         Thread.sleep(2000);
         barContainers.forEach(barContainer -> {
-            WebElement bar = barContainer.findElement(By.xpath("./*[@class='bar']"));
+            WebElement bar = histogramPage.getBarElement(barContainer);
 
             Actions actions = null;
             try {
@@ -66,10 +65,10 @@ public class CaseHistogramTest {
             actions.build().perform();
             actions.build().perform();
 
-            WebElement toolTipContainer = histogramPage.getTooltip();
+            histogramPage.getTooltip();
 
-            String borders = toolTipContainer.findElement(By.xpath("./div[1]")).getText();
-            String count = toolTipContainer.findElement(By.xpath("./div[2]")).getText();
+            String borders = histogramPage.getBordersText();
+            String count = histogramPage.getCountText();
             assertTrue(borders.matches(AVG), borders);
             assertTrue(count.matches(COUNT), count);
 

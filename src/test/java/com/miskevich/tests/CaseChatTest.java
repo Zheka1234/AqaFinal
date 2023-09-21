@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 import static com.miskevich.driver.BrowserDriver.getMyProperties;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class CaseChatTest {
@@ -40,8 +41,8 @@ public class CaseChatTest {
         Thread.sleep(3000);
         assertTrue(chatPage.chartClick());
         chatPage.orderClick();
-        assertEquals(chatPage.getMidPriceTooltip(),chatPage.getMidPrice());
-        assertEquals(chatPage.getAvgPrice(),chatPage.underChat());
+        assertEquals(chatPage.getMidPriceTooltip(), chatPage.getMidPrice());
+        assertEquals(chatPage.getAvgPrice(), chatPage.underChat());
 
 
     }

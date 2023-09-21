@@ -5,8 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BrowserDriver {
 
@@ -21,7 +21,7 @@ public class BrowserDriver {
             System.setProperty("webdriver.chrome.driver", properties.getProperty("driverLocation"));
             driver = new ChromeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.manage().window().maximize();
     }
 

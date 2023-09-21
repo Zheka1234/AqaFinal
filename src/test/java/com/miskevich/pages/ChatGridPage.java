@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ChatGridPage extends BasePage {
 
@@ -29,6 +30,9 @@ public class ChatGridPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='chart-view__info mb-2 hidden-text']")
     private WebElement lineUnderChat;
+
+    @FindBy(xpath = "xpath_колонки")
+    private List<WebElement> columnElements;
 
 
     public boolean chartClick() {

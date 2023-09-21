@@ -40,6 +40,7 @@ public class CaseScatterPlotTest {
                 {"Size", "Exec size"},
                 {"Exec size", "Num of executions"},
                 {"Avg fill price", "Execution price volatility"},
+                {"Exec size", "Permanent market impact"},
 
         };
     }
@@ -59,6 +60,7 @@ public class CaseScatterPlotTest {
         deltixuatPage.clickUser();
         Thread.sleep(2000);
         scatterPlot.scatterClick();
+        scatterPlot.setInterval();
         Thread.sleep(2000);
         String initialXAxis = scatterPlot.getXAxis();
         String initialYAxis = scatterPlot.getYAxis();

@@ -2,6 +2,7 @@ package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,7 +21,7 @@ public class ScatterPlot extends BasePage {
     @FindBy(xpath = "//div[text()='Y Attribute']/following-sibling::*")
     private WebElement yAttribute;
 
-    @FindBy(xpath = "//*[@name='intervalCountAutocomplete']//input")
+    @FindBy(xpath = "//div[text()='Intervals']/following-sibling::*")
     private WebElement interval;
 
     @FindBy(xpath = "//*[@class='scatter-plot-x-label']")
@@ -36,7 +37,7 @@ public class ScatterPlot extends BasePage {
     @FindBy(css = "g[class='y axis']")
     private WebElement yAxis;
 
-    @FindBy(css = "//a[contains(text(),'10')]")
+    @FindBy(xpath = "//a[contains(text(),'10')]")
     private WebElement checkInterval;
 
 
@@ -49,8 +50,9 @@ public class ScatterPlot extends BasePage {
         return true;
     }
 
-    public void setInterval(int value) {
-
+    public void setInterval() {
+        interval.click();
+        checkInterval.sendKeys(Keys.ENTER);
     }
 
     public String getXAxis() {
@@ -84,7 +86,7 @@ public class ScatterPlot extends BasePage {
         xAttribute.click();
         WebElement xAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + xAttributeText + "')]"));
-        xAttributeElement.click();
+        xAttributeElement.sendKeys(Keys.ENTER);
 
     }
 
@@ -93,7 +95,7 @@ public class ScatterPlot extends BasePage {
         yAttribute.click();
         WebElement yAttributeElement = BrowserDriver.getDriver()
                 .findElement(By.xpath("//li[@class='autocomplete-dropdown-item']//a[contains(text(),'" + yAttributeText + "')]"));
-        yAttributeElement.click();
+        yAttributeElement.sendKeys(Keys.ENTER);
     }
 
     public boolean checkName() {

@@ -21,15 +21,6 @@ public class HistogramPage extends BasePage {
     @FindBy(xpath = "//*[@class='tooltip']")
     private WebElement tool;
 
-    @FindBy(xpath = "./*[@class='bar']")
-    private WebElement barElement;
-
-    @FindBy(xpath = "./div[1]")
-    private WebElement bordersTextElement;
-
-    @FindBy(xpath = "./div[2]")
-    private WebElement countTextElement;
-
     public WebElement getBarElement(WebElement barContainer) {
         return barContainer.findElement(By.xpath("./*[@class='bar']"));
     }
@@ -62,18 +53,11 @@ public class HistogramPage extends BasePage {
     public void moveMouseToElement(WebElement element, int xOffset, int yOffset) throws IOException {
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(element, xOffset, yOffset);
-        actions.build().perform();
-    }
-
-    public void clickElement(WebElement element, int xOffset, int yOffset) throws IOException {
-        Actions actions = new Actions(BrowserDriver.getDriver());
-        actions.moveToElement(element, xOffset, yOffset);
         actions.click().build().perform();
     }
 
     public HistogramPage() throws IOException {
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
-
 
 }

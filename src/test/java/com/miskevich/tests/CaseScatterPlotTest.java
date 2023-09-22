@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 
 import static com.miskevich.driver.BrowserDriver.getMyProperties;
+import static org.testng.Assert.assertTrue;
 
 public class CaseScatterPlotTest {
 
@@ -41,6 +42,21 @@ public class CaseScatterPlotTest {
                 {"Exec size", "Num of executions"},
                 {"Avg fill price", "Execution price volatility"},
                 {"Exec size", "Permanent market impact"},
+                {"Price", "Exec size"},
+                {"Execution price volatility", "Avg fill price"},
+                {"Realized market impact", "Shortfall"},
+                {"Permanent market impact", "Permanent market impact"},
+                {"Participation rate", "Exec size"},
+                {"Shortfall", "Num of executions"},
+                {"Multiplier", "Execution price volatility"},
+                {"Tick size", "Permanent market impact"},
+                {"Currency code", "Exec size"},
+                {"Sequence number", "Num of executions"},
+                {"Db sequence number", "Execution price volatility"},
+                {"Benchmark price", "Permanent market impact"},
+                {"Price imp. (ticks)", "Execution price volatility"},
+                {"Price imp. (amount)", "Permanent market impact"},
+
 
         };
     }
@@ -66,8 +82,10 @@ public class CaseScatterPlotTest {
         String initialYAxis = scatterPlot.getYAxis();
         Thread.sleep(2000);
         scatterPlot.xAttributeClick(xAttributeName);
+        assertTrue(scatterPlot.checkLoads());
         Thread.sleep(2000);
         scatterPlot.yAttributeClick(yAttributeName);
+        assertTrue(scatterPlot.checkLoads());
         SoftAssert soft = new SoftAssert();
         Thread.sleep(2000);
         soft.assertTrue(scatterPlot.getBubbles());

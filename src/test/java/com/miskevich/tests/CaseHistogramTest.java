@@ -54,8 +54,6 @@ public class CaseHistogramTest {
             WebElement bar = histogramPage.getBarElement(barContainer);
             try {
                 histogramPage.moveMouseToElement(bar, -20, -20);
-                histogramPage.moveMouseToElement(bar, -50, -50);
-                histogramPage.clickElement(bar, -50, -50);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

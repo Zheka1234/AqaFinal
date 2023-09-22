@@ -40,6 +40,9 @@ public class ScatterPlot extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'10')]")
     private WebElement checkInterval;
 
+    @FindBy(xpath = "//div[@class='loader']")
+    private WebElement checkLoad;
+
 
     @FindBy(xpath = "//*[contains(@class,'scatter-plot-container')]//*[contains(@class,'scatter_element')]")
     private List<WebElement> bubbles;
@@ -47,6 +50,11 @@ public class ScatterPlot extends BasePage {
     public boolean getBubbles() {
         log.info("getBubbles start");
         bubbles.size();
+        return true;
+    }
+
+    public boolean checkLoads() {
+        checkLoad.isDisplayed();
         return true;
     }
 

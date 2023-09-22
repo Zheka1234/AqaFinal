@@ -3,6 +3,7 @@ package com.miskevich.pages;
 import com.miskevich.driver.BrowserDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -56,6 +57,18 @@ public class HistogramPage extends BasePage {
         openHistogram.click();
         log.info("histogramClick good");
         return openHistogram.isDisplayed();
+    }
+
+    public void moveMouseToElement(WebElement element, int xOffset, int yOffset) throws IOException {
+        Actions actions = new Actions(BrowserDriver.getDriver());
+        actions.moveToElement(element, xOffset, yOffset);
+        actions.build().perform();
+    }
+
+    public void clickElement(WebElement element, int xOffset, int yOffset) throws IOException {
+        Actions actions = new Actions(BrowserDriver.getDriver());
+        actions.moveToElement(element, xOffset, yOffset);
+        actions.click().build().perform();
     }
 
     public HistogramPage() throws IOException {

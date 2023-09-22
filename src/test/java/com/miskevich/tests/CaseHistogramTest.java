@@ -5,7 +5,6 @@ import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.HistogramPage;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -53,34 +52,18 @@ public class CaseHistogramTest {
         Thread.sleep(2000);
         barContainers.forEach(barContainer -> {
             WebElement bar = histogramPage.getBarElement(barContainer);
-
-            Actions actions = null;
             try {
-                actions = new Actions(BrowserDriver.getDriver());
+                histogramPage.moveMouseToElement(bar, -20, -20);
+                histogramPage.moveMouseToElement(bar, -50, -50);
+                histogramPage.clickElement(bar, -50, -50);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-            actions.moveToElement(bar, -20, -20);
-            actions.build().perform();
-            actions.build().perform();
-
             histogramPage.getTooltip();
-
             String borders = histogramPage.getBordersText();
             String count = histogramPage.getCountText();
             assertTrue(borders.matches(AVG), borders);
             assertTrue(count.matches(COUNT), count);
-
-            Actions actions2 = null;
-            try {
-                actions2 = new Actions(BrowserDriver.getDriver());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            actions2.moveToElement(bar, -50, -50);
-            actions2.click().build().perform();
 
         });
     }

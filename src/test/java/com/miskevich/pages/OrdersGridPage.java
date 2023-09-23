@@ -22,10 +22,6 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//div[@col-id='endTime']")
     private WebElement displayIdCheckFalse;
 
-
-    @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
-    private WebElement displayTypeFalse;
-
     @FindBy(xpath = "//button[@ref='eToggleButton']")
     private WebElement toolPanel;
 
@@ -39,14 +35,14 @@ public class OrdersGridPage extends BasePage {
     private WebElement columClick;
 
     @FindBy(xpath = "//span[@class='ag-icon ag-icon-columns']")
-    private WebElement thirdTabTypeClick;
+    private WebElement thirdVersionOfTheMenu;
 
     @FindBy(xpath = "//div[@class='ag-menu-column-select-wrapper']//*[@title='Id']/preceding-sibling::span")
-    private WebElement thirdTypeClick;
+    private WebElement thirdTypeClickId;
 
 
     public boolean getClickFilter() {
-        log.info("getClickFilter start");
+        log.info("getClickFilter " + clickFilter.isDisplayed());
         clickFilter.click();
         return clickFilter.isDisplayed();
     }
@@ -58,48 +54,47 @@ public class OrdersGridPage extends BasePage {
     }
 
     public boolean displayIdCheck() {
-        log.info("displayIdCheck start");
-        displayIdCheck.isDisplayed();
+        log.info("display id colum check " + displayIdCheck.isDisplayed());
         return displayIdCheck.isDisplayed();
     }
 
     public boolean displayIdCheckFalse() {
-        log.info("displayIdCheckFalse start");
+        log.info("display id colum check false ");
         displayIdCheckFalse.isDisplayed();
         return false;
     }
 
     public void tollPanelClickOff() {
-        log.info("tollPanelClickOff start");
+        log.info("check the column on the instrument panel off");
         toolPanel.click();
         typeClickId.click();
     }
 
     public void tollPanelClickOn() {
-        log.info("tollPanelClickOn start");
+        log.info("check the column on the instrument panel on");
         typeClickId.click();
         toolPanel.click();
 
     }
 
-    public boolean columClick() throws InterruptedException, IOException {
-        log.info("columClick start");
+    public void columClick() throws IOException {
+        log.info("Open filter for any column and switch to the 3rd tab");
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(moveClick).perform();
         columClick.click();
-        Thread.sleep(2000);
-        return true;
+
+
     }
 
-    public boolean columClickId() {
-        log.info("columClickId start");
-        thirdTabTypeClick.click();
-        return true;
+    public void columClickId() {
+        log.info("third version of the menu ");
+        thirdVersionOfTheMenu.click();
+
     }
 
-    public void columClickSecond() {
-        log.info("columClickSecond start");
-        thirdTypeClick.click();
+    public void columClickIdColum() {
+        log.info("click on ID in menu 3 ");
+        thirdTypeClickId.click();
     }
 
 

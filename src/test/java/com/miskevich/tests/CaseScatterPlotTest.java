@@ -1,7 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
-import com.miskevich.pages.DeltixuatPage;
+import com.miskevich.pages.LoginPage;
 import com.miskevich.pages.ScatterPlot;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
@@ -13,20 +13,19 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 
 import static com.miskevich.driver.BrowserDriver.getMyProperties;
-import static org.testng.Assert.assertTrue;
 
 public class CaseScatterPlotTest {
 
     ScatterPlot scatterPlot;
 
-    DeltixuatPage deltixuatPage;
+    LoginPage loginPage;
 
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         scatterPlot = new ScatterPlot();
-        deltixuatPage = new DeltixuatPage();
+        loginPage = new LoginPage();
     }
 
     @AfterMethod
@@ -72,24 +71,21 @@ public class CaseScatterPlotTest {
             "name of the Y-axis is changed to Y Attribute\n" +
             "Repeat steps 1-4 for all attributes.")
     @Test(dataProvider = "attributeNames")
-    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException, InterruptedException {
-        deltixuatPage.clickUser();
-        Thread.sleep(2000);
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException {
+        loginPage.inputUser();
         scatterPlot.scatterClick();
         scatterPlot.setInterval();
-        Thread.sleep(2000);
+
         String initialXAxis = scatterPlot.getXAxis();
         String initialYAxis = scatterPlot.getYAxis();
-        Thread.sleep(2000);
+
         scatterPlot.xAttributeClick(xAttributeName);
-        assertTrue(scatterPlot.checkLoads());
-        Thread.sleep(2000);
         scatterPlot.yAttributeClick(yAttributeName);
-        assertTrue(scatterPlot.checkLoads());
+
         SoftAssert soft = new SoftAssert();
-        Thread.sleep(2000);
         soft.assertTrue(scatterPlot.getBubbles());
-        soft.assertEquals(scatterPlot.checkLabel(), scatterPlot.checkName());
+        soft.assertEquals(scatterPlot.checkLabelX(), scatterPlot.checkXAttribute());
+        soft.assertEquals(scatterPlot.checkLabelY(), scatterPlot.checkYAttribute());
 
 
         String updatedXAxis = scatterPlot.getXAxis();

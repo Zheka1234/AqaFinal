@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +23,7 @@ public class HistogramPage extends BasePage {
     private WebElement tool;
 
     public WebElement getBarElement(WebElement barContainer) {
-        return barContainer.findElement(By.xpath("./*[@class='bar']"));
+        return waitFluent.until(ExpectedConditions.visibilityOf(barContainer.findElement(By.xpath("./*[@class='bar']"))));
     }
 
     public String getBordersText() {
@@ -44,7 +45,8 @@ public class HistogramPage extends BasePage {
     }
 
     public boolean histogramClick() {
-        log.info("histogramClick start");
+        log.info("histogram click and wait for it to appear " + openHistogram.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(openHistogram));
         openHistogram.click();
         log.info("histogramClick good");
         return openHistogram.isDisplayed();
@@ -53,7 +55,7 @@ public class HistogramPage extends BasePage {
     public void moveMouseToElement(WebElement element, int xOffset, int yOffset) throws IOException {
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(element, xOffset, yOffset);
-        actions.click().build().perform();
+        actions.build().perform();
     }
 
     public HistogramPage() throws IOException {

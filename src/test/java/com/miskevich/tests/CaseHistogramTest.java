@@ -1,8 +1,8 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
-import com.miskevich.pages.DeltixuatPage;
 import com.miskevich.pages.HistogramPage;
+import com.miskevich.pages.LoginPage;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
@@ -19,18 +19,18 @@ public class CaseHistogramTest {
 
     HistogramPage histogramPage;
 
-    DeltixuatPage deltixuatPage;
+    LoginPage loginPage;
 
-    private String COUNT = "Count: \\d+";
+    private String PATTERN_COUNT = "Count: \\d+";
 
-    private String AVG = "Avg fill price: [\\[,\\(]\\d+\\.\\d+, \\d+\\.\\d+[),\\]]";
+    private String PATTERN_AVG = "Avg fill price: [\\[,\\(]\\d+\\.\\d+, \\d+\\.\\d+[),\\]]";
 
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         histogramPage = new HistogramPage();
-        deltixuatPage = new DeltixuatPage();
+        loginPage = new LoginPage();
     }
 
     @AfterMethod
@@ -43,13 +43,11 @@ public class CaseHistogramTest {
             "Click on the bar.\n" +
             "Repeat steps 1-4 for all bars.")
     @Test
-    public void testHistogram() throws InterruptedException {
-        assertTrue(deltixuatPage.clickUser());
-        Thread.sleep(2000);
+    public void testHistogram() {
+        assertTrue(loginPage.inputUser());
         assertTrue(histogramPage.histogramClick());
         List<WebElement> barContainers = histogramPage.getBars();
         assertTrue(barContainers.size() > 0);
-        Thread.sleep(2000);
         barContainers.forEach(barContainer -> {
             WebElement bar = histogramPage.getBarElement(barContainer);
             try {
@@ -60,8 +58,8 @@ public class CaseHistogramTest {
             histogramPage.getTooltip();
             String borders = histogramPage.getBordersText();
             String count = histogramPage.getCountText();
-            assertTrue(borders.matches(AVG), borders);
-            assertTrue(count.matches(COUNT), count);
+            assertTrue(borders.matches(PATTERN_AVG), borders);
+            assertTrue(count.matches(PATTERN_COUNT), count);
 
         });
     }

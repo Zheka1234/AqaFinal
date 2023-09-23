@@ -4,6 +4,7 @@ import com.miskevich.driver.BrowserDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +14,6 @@ public class ChatGridPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='app-title'][contains(text(),'Grid & chart')]")
     private WebElement openChat;
-    ////div[@col-id='orderId']//span[contains(text(),'1had73qs6:1734')]
     @FindBy(xpath = "//div[@row-index='5']//div[@class='ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-value']")
     private WebElement orderClick;
 
@@ -38,8 +38,30 @@ public class ChatGridPage extends BasePage {
     @FindBy(xpath = "//div[@col-id='orderType']//span[@ref='eText']")
     private WebElement typeSort;
 
+    @FindBy(xpath = "//div[@row-index='5']//div[@col-id='averageFillPrice']/span[1]")
+    private WebElement tableAvg;
+
+    @FindBy(xpath = "//div[@style='background-color: rgb(52, 73, 94);']")
+    private WebElement midPriceColor;
+
+    @FindBy(css = "g[class$='MID_PRICE']>rect")
+    private WebElement midColor;
+
+
     public void clickSortType() {
         typeSort.click();
+    }
+
+    public String getMidPriceColor() {
+        log.info("getMidPriceColor start");
+
+        return midColor.getText();
+    }
+
+    public String getMidColor() {
+        log.info("getMidColor start");
+
+        return midPriceColor.getText();
     }
 
     public List<WebElement> getColumnElements() {
@@ -48,6 +70,7 @@ public class ChatGridPage extends BasePage {
     }
 
     public boolean areElementSortedDecreasing() {
+        log.info("getMidPriceTooltip start");
         List<String> columnValues = new ArrayList<>();
         for (WebElement element : columnElements) {
             columnValues.add(element.getText());
@@ -62,6 +85,7 @@ public class ChatGridPage extends BasePage {
     }
 
     public boolean areElementSortedIncrease() {
+        log.info("getMidPriceTooltip start");
         List<String> columnValues = new ArrayList<>();
         for (WebElement element : columnElements) {
             columnValues.add(element.getText());
@@ -76,6 +100,7 @@ public class ChatGridPage extends BasePage {
     }
 
     public boolean areElementsUnsorted() {
+        log.info("getMidPriceTooltip start");
         List<String> columnValues = new ArrayList<>();
         for (WebElement element : columnElements) {
             columnValues.add(element.getText());
@@ -91,22 +116,19 @@ public class ChatGridPage extends BasePage {
 
 
     public boolean chartClick() {
-        log.info("chartClick start");
+        log.info("chart click and wait for it to appear " + openChat.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(openChat));
         openChat.click();
         log.info("chartClick good");
         return openChat.isDisplayed();
     }
 
     public void orderClick() {
+        log.info("getMidPriceTooltip start");
         orderClick.click();
 
     }
 
-    public boolean linesClick() {
-        linesClick.click();
-        return linesClick.isDisplayed();
-
-    }
 
     public double getMidPrice() {
         log.info("getMidPrice start");
@@ -122,6 +144,11 @@ public class ChatGridPage extends BasePage {
     public double getAvgPrice() {
         log.info("getAvgPrice start");
         return Double.parseDouble(avgPrice.getText());
+    }
+
+    public double getAvgTablePrice() {
+        log.info("getAvgTablePrice start");
+        return Double.parseDouble(tableAvg.getText());
     }
 
     public double underChat() {

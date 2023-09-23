@@ -2,7 +2,7 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
-import com.miskevich.pages.DeltixuatPage;
+import com.miskevich.pages.LoginPage;
 import com.miskevich.pages.OrdersGridPage;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
@@ -21,14 +21,14 @@ public class CaseOrdersGridTest {
 
     ChatGridPage chatGridPage;
 
-    DeltixuatPage deltixuatPage;
+    LoginPage loginPage;
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         ordersGridPage = new OrdersGridPage();
         chatGridPage = new ChatGridPage();
-        deltixuatPage = new DeltixuatPage();
+        loginPage = new LoginPage();
     }
 
     @AfterMethod
@@ -44,9 +44,9 @@ public class CaseOrdersGridTest {
             "Check/uncheck the column.\n" +
             "Make sure the column appears/disappears from the grid.")
     @Test
-    public void testOrdersGridFilterColumns() throws InterruptedException, IOException {
+    public void testOrdersGridFilterColumns() throws IOException {
 
-        assertTrue(deltixuatPage.clickUser());
+        assertTrue(loginPage.inputUser());
         assertTrue(chatGridPage.chartClick());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
@@ -60,11 +60,11 @@ public class CaseOrdersGridTest {
         ordersGridPage.tollPanelClickOn();
         assertTrue(ordersGridPage.displayIdCheck());
 
-        assertTrue(ordersGridPage.columClick());
-        assertTrue(ordersGridPage.columClickId());
-        ordersGridPage.columClickSecond();
+        ordersGridPage.columClick();
+        ordersGridPage.columClickId();
+        ordersGridPage.columClickIdColum();
         assertFalse(ordersGridPage.displayIdCheckFalse());
-        ordersGridPage.columClickSecond();
+        ordersGridPage.columClickIdColum();
         assertTrue(ordersGridPage.displayIdCheck());
 
     }

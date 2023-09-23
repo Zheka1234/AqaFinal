@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,8 +41,7 @@ public class ScatterPlot extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'10')]")
     private WebElement checkInterval;
 
-    @FindBy(xpath = "//div[@class='loader']")
-    private WebElement checkLoad;
+
 
 
     @FindBy(xpath = "//*[contains(@class,'scatter-plot-container')]//*[contains(@class,'scatter_element')]")
@@ -50,15 +50,14 @@ public class ScatterPlot extends BasePage {
     public boolean getBubbles() {
         log.info("getBubbles start");
         bubbles.size();
-        return true;
+        return bubbles.size() > 0;
     }
 
-    public boolean checkLoads() {
-        checkLoad.isDisplayed();
-        return true;
-    }
+
 
     public void setInterval() {
+        log.info("click on the interval and select");
+        wait.until(ExpectedConditions.visibilityOf(interval));
         interval.click();
         checkInterval.sendKeys(Keys.ENTER);
     }
@@ -74,18 +73,24 @@ public class ScatterPlot extends BasePage {
     }
 
 
-    public boolean scatterClick() {
-        log.info("scatterClick start");
+    public void scatterClick() {
+        log.info("scatter click and wait for it to appear");
+        wait.until(ExpectedConditions.visibilityOf(openScatter));
         openScatter.click();
         log.info("scatterClick good");
-        return openScatter.isDisplayed();
+        ;
     }
 
-    public boolean checkLabel() {
-        log.info("checkLabel start");
+    public boolean checkLabelX() {
+        log.info("checking the label x ");
         xLabel.getText();
+        return xLabel.isDisplayed();
+    }
+
+    public boolean checkLabelY() {
+        log.info("checking the label y ");
         yLabel.getText();
-        return true;
+        return yLabel.isDisplayed();
     }
 
 
@@ -106,11 +111,17 @@ public class ScatterPlot extends BasePage {
         yAttributeElement.sendKeys(Keys.ENTER);
     }
 
-    public boolean checkName() {
-        log.info("checkName start");
+    public boolean checkXAttribute() {
+        log.info("checking the attribute name " + xAttribute.getText());
         xAttribute.getText();
+        return xAttribute.isDisplayed();
+    }
+
+    public boolean checkYAttribute() {
+        log.info("checking the attribute name " + yAttribute.getText());
         yAttribute.getText();
-        return true;
+
+        return yAttribute.isDisplayed();
     }
 
     public ScatterPlot() throws IOException {

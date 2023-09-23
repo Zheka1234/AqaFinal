@@ -2,7 +2,7 @@ package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
-import com.miskevich.pages.DeltixuatPage;
+import com.miskevich.pages.LoginPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,14 +17,14 @@ public class SortCase {
 
     ChatGridPage chatPage;
 
-    DeltixuatPage deltixuatPage;
+    LoginPage loginPage;
 
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         chatPage = new ChatGridPage();
-        deltixuatPage = new DeltixuatPage();
+        loginPage = new LoginPage();
 
     }
 
@@ -32,11 +32,11 @@ public class SortCase {
     public void closeDeltixuat() {
         BrowserDriver.close();
     }
-l
+
     @Test
-    public void testSort() throws InterruptedException {
-        assertTrue(deltixuatPage.clickUser());
-        Thread.sleep(3000);
+    public void testSort()  {
+        assertTrue(loginPage.inputUser());
+
         assertTrue(chatPage.chartClick());
         chatPage.clickSortType();
         assertTrue(chatPage.areElementSortedIncrease());

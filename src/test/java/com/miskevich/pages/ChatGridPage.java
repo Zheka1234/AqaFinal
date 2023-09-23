@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatGridPage extends BasePage {
@@ -31,8 +32,62 @@ public class ChatGridPage extends BasePage {
     @FindBy(xpath = "//div[@class='chart-view__info mb-2 hidden-text']")
     private WebElement lineUnderChat;
 
-    @FindBy(xpath = "xpath_колонки")
+    @FindBy(xpath = "//div[@tabindex='-1']/..//div[@col-id='orderType']")
     private List<WebElement> columnElements;
+
+    @FindBy(xpath = "//div[@col-id='orderType']//span[@ref='eText']")
+    private WebElement typeSort;
+
+    public void clickSortType() {
+        typeSort.click();
+    }
+
+    public List<WebElement> getColumnElements() {
+        return columnElements;
+
+    }
+
+    public boolean areElementSortedDecreasing() {
+        List<String> columnValues = new ArrayList<>();
+        for (WebElement element : columnElements) {
+            columnValues.add(element.getText());
+        }
+
+        for (int i = 0; i < columnValues.size() - 1; i++) {
+            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean areElementSortedIncrease() {
+        List<String> columnValues = new ArrayList<>();
+        for (WebElement element : columnElements) {
+            columnValues.add(element.getText());
+        }
+
+        for (int i = 0; i < columnValues.size() - 1; i++) {
+            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean areElementsUnsorted() {
+        List<String> columnValues = new ArrayList<>();
+        for (WebElement element : columnElements) {
+            columnValues.add(element.getText());
+        }
+
+        for (int i = 0; i < columnValues.size() - 1; i++) {
+            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
     public boolean chartClick() {

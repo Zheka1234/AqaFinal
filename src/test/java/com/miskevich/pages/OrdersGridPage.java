@@ -38,7 +38,7 @@ public class OrdersGridPage extends BasePage {
     private WebElement thirdVersionOfTheMenu;
 
     @FindBy(xpath = "//div[@class='ag-menu-column-select-wrapper']//*[@title='Id']/preceding-sibling::span")
-    private WebElement thirdTypeClickId;
+    private WebElement columClickIdColum;
 
 
     public boolean getClickFilter() {
@@ -86,7 +86,7 @@ public class OrdersGridPage extends BasePage {
 
     }
 
-    public void columClickId() {
+    public void thirdVersionOfTheMenu() {
         log.info("third version of the menu ");
         thirdVersionOfTheMenu.click();
 
@@ -94,7 +94,7 @@ public class OrdersGridPage extends BasePage {
 
     public void columClickIdColum() {
         log.info("click on ID in menu 3 ");
-        thirdTypeClickId.click();
+        columClickIdColum.click();
     }
 
 

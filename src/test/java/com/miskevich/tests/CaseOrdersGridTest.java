@@ -4,7 +4,7 @@ import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
 import com.miskevich.pages.LoginPage;
 import com.miskevich.pages.OrdersGridPage;
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -61,7 +61,7 @@ public class CaseOrdersGridTest {
         assertTrue(ordersGridPage.displayIdCheck());
 
         ordersGridPage.columClick();
-        ordersGridPage.columClickId();
+        ordersGridPage.thirdVersionOfTheMenu();
         ordersGridPage.columClickIdColum();
         assertFalse(ordersGridPage.displayIdCheckFalse());
         ordersGridPage.columClickIdColum();

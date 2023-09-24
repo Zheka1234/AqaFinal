@@ -45,10 +45,10 @@ public class CaseLoginTest {
         };
     }
 
-    @Description("Log in.\n" +
-            "Check that main page with the following components is opened:\n" +
-            "Settings button\n" +
-            "Benchmark Selector control\n" +
+    @Description("Log in." +
+            "Check that main page with the following components is opened:" +
+            "Settings button" +
+            "Benchmark Selector control" +
             "Application Toolbar with Summary, Grid & chart, Histogram, Scatter-plot and Reports tabs")
     @Test(dataProvider = "checkSection")
     public void caseLoginTest(String sectionName) throws IOException {

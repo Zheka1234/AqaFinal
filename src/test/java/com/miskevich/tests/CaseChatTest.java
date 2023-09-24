@@ -3,6 +3,7 @@ package com.miskevich.tests;
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.ChatGridPage;
 import com.miskevich.pages.LoginPage;
+import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -33,7 +34,14 @@ public class CaseChatTest {
         BrowserDriver.close();
     }
 
-
+    @Description("Select an order." +
+            "Click on + Lines." +
+            "Toggle the visibility of Avg fill price and Mid price in the Prices section." +
+            "Select an order with executions." +
+            "Check that:" +
+            "the value of Exec in the tooltip matches with Avg fill price in the Interactive legend control, Order info string and in the grid" +
+            "color of Exec line matches with text color of Price imp. (ticks) and Price imp. (amount)" +
+            "the value of Mid price in the Interactive legend control matches with its value in the tooltip")
     @Test
     public void testChat() {
 

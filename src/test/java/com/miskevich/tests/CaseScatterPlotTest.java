@@ -60,15 +60,15 @@ public class CaseScatterPlotTest {
         };
     }
 
-    @Description("Change X Attribute.\n" +
-            "Check that:\n" +
-            "values of axes are updated\n" +
-            "name of the X-axis changed to X Attribute\n" +
+    @Description("Change X Attribute." +
+            "Check that:" +
+            "values of axes are updated" +
+            "name of the X-axis changed to X Attribute" +
             "Change Y Attribute.\n" +
-            "Check that:\n" +
-            "grid is collapsed\n" +
-            "values are updated\n" +
-            "name of the Y-axis is changed to Y Attribute\n" +
+            "Check that:" +
+            "grid is collapsed" +
+            "values are updated" +
+            "name of the Y-axis is changed to Y Attribute" +
             "Repeat steps 1-4 for all attributes.")
     @Test(dataProvider = "attributeNames")
     public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException {

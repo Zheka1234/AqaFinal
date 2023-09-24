@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatGridPage extends BasePage {
@@ -41,7 +40,7 @@ public class ChatGridPage extends BasePage {
     @FindBy(xpath = "//div[@row-index='5']//div[@col-id='averageFillPrice']/span[1]")
     private WebElement tableAvg;
 
-    @FindBy(xpath = "//div[@style='background-color: rgb(52, 73, 94);']")
+    @FindBy(xpath = "//div[@class='legend-container__square']")
     private WebElement midPriceColor;
 
     @FindBy(css = "g[class$='MID_PRICE']>rect")
@@ -68,52 +67,6 @@ public class ChatGridPage extends BasePage {
         return columnElements;
 
     }
-
-    public boolean areElementSortedDecreasing() {
-        log.info("getMidPriceTooltip start");
-        List<String> columnValues = new ArrayList<>();
-        for (WebElement element : columnElements) {
-            columnValues.add(element.getText());
-        }
-
-        for (int i = 0; i < columnValues.size() - 1; i++) {
-            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) < 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean areElementSortedIncrease() {
-        log.info("getMidPriceTooltip start");
-        List<String> columnValues = new ArrayList<>();
-        for (WebElement element : columnElements) {
-            columnValues.add(element.getText());
-        }
-
-        for (int i = 0; i < columnValues.size() - 1; i++) {
-            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean areElementsUnsorted() {
-        log.info("getMidPriceTooltip start");
-        List<String> columnValues = new ArrayList<>();
-        for (WebElement element : columnElements) {
-            columnValues.add(element.getText());
-        }
-
-        for (int i = 0; i < columnValues.size() - 1; i++) {
-            if (columnValues.get(i).compareTo(columnValues.get(i + 1)) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 
     public boolean chartClick() {
         log.info("chart click and wait for it to appear " + openChat.isDisplayed());

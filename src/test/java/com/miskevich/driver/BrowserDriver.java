@@ -14,6 +14,8 @@ public class BrowserDriver {
 
     private static Properties properties;
 
+    private static final int WAIT = 3;
+
     public static void initDriver() throws IOException {
         properties = new Properties();
         properties.load(new FileInputStream("src/test/resources/project.properties"));
@@ -21,7 +23,7 @@ public class BrowserDriver {
             System.setProperty("webdriver.chrome.driver", properties.getProperty("driverLocation"));
             driver = new ChromeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT));
         driver.manage().window().maximize();
     }
 

@@ -3,7 +3,7 @@ package com.miskevich.tests;
 import com.miskevich.driver.BrowserDriver;
 import com.miskevich.pages.HistogramPage;
 import com.miskevich.pages.LoginPage;
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -38,9 +38,9 @@ public class CaseHistogramTest {
         BrowserDriver.close();
     }
 
-    @Description("Hover over a bar.\n" +
-            "Check boundaries and number of orders are displayed.\n" +
-            "Click on the bar.\n" +
+    @Description("Hover over a bar." +
+            "Check boundaries and number of orders are displayed." +
+            "Click on the bar." +
             "Repeat steps 1-4 for all bars.")
     @Test
     public void testHistogram() {

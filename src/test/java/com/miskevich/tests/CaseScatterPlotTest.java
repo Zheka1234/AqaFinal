@@ -79,8 +79,8 @@ public class CaseScatterPlotTest {
         String initialXAxis = scatterPlot.getXAxis();
         String initialYAxis = scatterPlot.getYAxis();
 
-        scatterPlot.xAttributeClick(xAttributeName);
-        scatterPlot.yAttributeClick(yAttributeName);
+        scatterPlot.xAttributeSelect(xAttributeName);
+        scatterPlot.yAttributeSelect(yAttributeName);
 
         SoftAssert soft = new SoftAssert();
         soft.assertTrue(scatterPlot.getBubbles());

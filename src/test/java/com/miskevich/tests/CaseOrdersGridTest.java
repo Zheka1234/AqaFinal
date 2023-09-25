@@ -44,15 +44,17 @@ public class CaseOrdersGridTest {
             "Check/uncheck the column.\n" +
             "Make sure the column appears/disappears from the grid.")
     @Test
-    public void testOrdersGridFilterColumns() throws IOException {
+    public void testOrdersGridFilterColumns() throws IOException, InterruptedException {
 
         assertTrue(loginPage.inputUser());
         assertTrue(chatGridPage.chartClick());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
-        assertFalse(ordersGridPage.displayIdCheckFalse());
+        Thread.sleep(2000);
+        assertFalse( ordersGridPage.displayIdCheckFalse());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
+        Thread.sleep(2000);
         assertTrue(ordersGridPage.displayIdCheck());
 
         ordersGridPage.tollPanelClickOff();

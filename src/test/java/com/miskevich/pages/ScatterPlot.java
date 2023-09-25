@@ -94,7 +94,7 @@ public class ScatterPlot extends BasePage {
     }
 
 
-    public void xAttributeClick(String xAttributeText) throws IOException {
+    public void xAttributeSelect(String xAttributeText) throws IOException {
         log.info("X the attribute has not changed" + xAttributeText);
         xAttribute.click();
         WebElement xAttributeElement = BrowserDriver.getDriver()
@@ -103,7 +103,7 @@ public class ScatterPlot extends BasePage {
 
     }
 
-    public void yAttributeClick(String yAttributeText) throws IOException {
+    public void yAttributeSelect(String yAttributeText) throws IOException {
         log.info("Y the attribute has not changed" + yAttributeText);
         yAttribute.click();
         WebElement yAttributeElement = BrowserDriver.getDriver()

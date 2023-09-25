@@ -19,7 +19,7 @@ public class OrdersGridPage extends BasePage {
     @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
     private WebElement displayIdCheck;
 
-    @FindBy(xpath = "//div[@col-id='endTime']")
+    @FindBy(xpath = "//div[@col-id='orderId']")
     private WebElement displayIdCheckFalse;
 
     @FindBy(xpath = "//button[@ref='eToggleButton']")

@@ -1,8 +1,9 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
-import com.miskevich.pages.MainPage;
+import com.miskevich.driver.Settings;
 import com.miskevich.pages.LoginPage;
+import com.miskevich.pages.MainPage;
 import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +13,6 @@ import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
-import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertTrue;
 
 public class CaseLoginTest {
@@ -22,17 +22,16 @@ public class CaseLoginTest {
     MainPage mainPage;
 
     @BeforeMethod
-    public void openDeltixuat() throws IOException {
-        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
+    public void openMainPage() throws IOException {
         loginPage = new LoginPage();
-
-        loginPage.login("selenium_chrome","Axa@Demo");
+        loginPage.open();
+        loginPage.login(Settings.getUserName(), Settings.getUserPassword());
         mainPage = new MainPage();
 
     }
 
     @AfterMethod
-    public void closeDeltixuat() {
+    public void cleanUp() {
         BrowserDriver.close();
     }
 
@@ -49,10 +48,10 @@ public class CaseLoginTest {
     }
 
     @Description("Log in." +
-            "Check that main page with the following components is opened:" +
-            "Settings button" +
-            "Benchmark Selector control" +
-            "Application Toolbar with Summary, Grid & chart, Histogram, Scatter-plot and Reports tabs")
+            "Open main page" +
+            "Settings button is displayed" +
+            "Benchmark Selector control is displayed" +
+            "Application Toolbar with Summary, Grid & chart, Histogram, Scatter-plot and Reports tabs is displayed")
     @Test(dataProvider = "checkSection")
     public void caseLoginTest(String sectionName) throws IOException {
         assertTrue(mainPage.isSettingDisplayed());

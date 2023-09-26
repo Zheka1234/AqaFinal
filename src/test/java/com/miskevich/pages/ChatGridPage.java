@@ -50,33 +50,31 @@ public class ChatGridPage extends BasePage {
         log.info("chart click and wait for it to appear " + openChat.getText());
         wait.until(ExpectedConditions.visibilityOf(openChat));
         openChat.click();
-        log.info("chartClick good");
 
     }
 
     @Step("Click on order")
     public void orderClick() {
-        log.info("getMidPriceTooltip start");
+        log.info("Click on order");
         orderOpen.click();
     }
 
     @Step("Get the icon color in your order Mid price")
     public String getMidPriceColor() {
-        log.info("getMidPriceColor start");
+        log.info("Get the icon color in your order Mid price" + midColor.getText());
 
         return midColor.getText();
     }
 
     @Step("Get the color of the icon in your order in the table below on the right Mid price")
     public String getMidColor() {
-        log.info("getMidColor start");
-
+        log.info("Get the color of the icon in your order in the table below on the right Mid price" + midPriceColor.getText());
         return midPriceColor.getText();
     }
 
     @Step("Get the value in your order in the table below Mid Price")
     public double getMidPrice() {
-        log.info("getMidPrice start");
+        log.info("Get the value in your order in the table below Mid Price" + midPrice.getText());
         return Double.parseDouble(midPrice.getText());
     }
 
@@ -89,13 +87,13 @@ public class ChatGridPage extends BasePage {
 
     @Step("Get the value in your order in the table below AVG Price")
     public double getAvgPrice() {
-        log.info("getAvgPrice start");
+        log.info("Get the value in your order in the table below AVG Price" + avgPrice.getText());
         return Double.parseDouble(avgPrice.getText());
     }
 
     @Step("Get the cost of your order in the main AVG price table.")
     public double getAvgTablePrice() {
-        log.info("getAvgTablePrice start");
+        log.info("Get the cost of your order in the main AVG price table" + tableAvg.getText());
         return Double.parseDouble(tableAvg.getText());
     }
 

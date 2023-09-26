@@ -1,6 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.driver.Settings;
 import com.miskevich.pages.ChatGridPage;
 import com.miskevich.pages.LoginPage;
 import com.miskevich.pages.OrdersGridPage;
@@ -11,7 +12,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -24,51 +24,73 @@ public class CaseOrdersGridTest {
     LoginPage loginPage;
 
     @BeforeMethod
-    public void openDeltixuat() throws IOException {
-        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
-        ordersGridPage = new OrdersGridPage();
-        chatGridPage = new ChatGridPage();
+    public void openMainPage() throws IOException {
         loginPage = new LoginPage();
-        loginPage.login("selenium_chrome","Axa@Demo");
+        loginPage.open();
+        loginPage.login(Settings.getUserName(), Settings.getUserPassword());
+        chatGridPage = new ChatGridPage();
+        ordersGridPage = new OrdersGridPage();
     }
 
     @AfterMethod
-    public void closeDeltixuat() {
+    public void cleanUp() {
         BrowserDriver.close();
     }
 
-    @Description("Open Filter Configurator control and check/uncheck the column.\n" +
-            "Make sure the column appears/disappears from the grid.\n" +
-            "Open Tool panel and check/uncheck the column.\n" +
-            "Make sure the column appears/disappears from the grid.\n" +
-            "Open filter for any column and switch to the 3rd tab.\n" +
-            "Check/uncheck the column.\n" +
-            "Make sure the column appears/disappears from the grid.")
+    @Description("Open chat menu" +
+            "Click on filter" +
+            "Click id" +
+            "Colum id disappears" +
+            "Click on filter" +
+            "Click id" +
+            "Colum id appears")
     @Test
-    public void testOrdersGridFilterColumns() throws IOException {
-
-
+    public void testColumFilter() {
         chatGridPage.chartClick();
-        assertTrue(ordersGridPage.getClickFilter());
-        ordersGridPage.getCliCkIdFilter();
+        ordersGridPage.clickFilter();
+        ordersGridPage.clickIdFilter();
+        assertFalse(ordersGridPage.isDisplayIdColumAppearsDisappears());
+        ordersGridPage.clickFilter();
+        ordersGridPage.clickIdFilter();
 
-        assertFalse( ordersGridPage.displayIdCheckFalse());
-        assertTrue(ordersGridPage.getClickFilter());
-        ordersGridPage.getCliCkIdFilter();
+        assertTrue(ordersGridPage.isDisplayIdColumAppearsDisappears());
+    }
 
-        assertTrue(ordersGridPage.displayIdCheck());
+    @Description("Open chat menu" +
+            "Click on tool panel" +
+            "Click id" +
+            "Colum id disappears" +
+            "Click id" +
+            "Colum id appears")
+    @Test
+    public void testColumToolPanel() {
+        chatGridPage.chartClick();
+        ordersGridPage.tollPanelClick();
 
-        ordersGridPage.tollPanelClickOff();
-        assertFalse(ordersGridPage.displayIdCheckFalse());
-        ordersGridPage.tollPanelClickOn();
-        assertTrue(ordersGridPage.displayIdCheck());
+        ordersGridPage.tollPanelClickId();
+        assertFalse(ordersGridPage.isDisplayIdColumAppearsDisappears());
+        ordersGridPage.tollPanelClickId();
+        assertTrue(ordersGridPage.isDisplayIdColumAppearsDisappears());
 
-        ordersGridPage.columClick();
+    }
+
+    @Description("Open chat menu" +
+            "Hover over the Type name column and click on menu" +
+            "In the menu of the column named type, click on the third element" +
+            "Click on the ID in the tray menu of the column named type" +
+            "Colum id disappears" +
+            "Click on the ID in the tray menu of the column named type" +
+            "Colum id appears")
+    @Test
+    public void testOrdersGridFilterColumns() {
+        chatGridPage.chartClick();
+        ordersGridPage.columClickType();
         ordersGridPage.thirdVersionOfTheMenu();
-        ordersGridPage.columClickIdColum();
-        assertFalse(ordersGridPage.displayIdCheckFalse());
-        ordersGridPage.columClickIdColum();
-        assertTrue(ordersGridPage.displayIdCheck());
+
+        ordersGridPage.columClickIdColumType();
+        assertFalse(ordersGridPage.isDisplayIdColumAppearsDisappears());
+        ordersGridPage.columClickIdColumType();
+        assertTrue(ordersGridPage.isDisplayIdColumAppearsDisappears());
 
     }
 

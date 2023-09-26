@@ -1,12 +1,16 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.driver.Settings;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
+
+import static com.miskevich.driver.Settings.getMyProperties;
+
 
 public class LoginPage extends BasePage {
 
@@ -27,6 +31,12 @@ public class LoginPage extends BasePage {
         passwordUser.click();
         passwordUser.sendKeys(setPassword);
         button.click();
+    }
+
+    @Step("Open site")
+    public void open() throws IOException {
+        log.error("No open site" + getMyProperties().getProperty("siteUrl"));
+        BrowserDriver.getDriver().get(Settings.getBaseUrl());
 
     }
 

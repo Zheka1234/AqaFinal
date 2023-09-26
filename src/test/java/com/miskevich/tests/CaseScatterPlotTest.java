@@ -1,9 +1,10 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.driver.Settings;
 import com.miskevich.pages.LoginPage;
-import com.miskevich.pages.ScatterPlot;
-import jdk.jfr.Description;
+import com.miskevich.pages.ScatterPlotPage;
+import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -12,25 +13,24 @@ import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
-import static com.miskevich.driver.BrowserDriver.getMyProperties;
+public class
+CaseScatterPlotTest {
 
-public class CaseScatterPlotTest {
-
-    ScatterPlot scatterPlot;
+    ScatterPlotPage scatterPlot;
 
     LoginPage loginPage;
 
 
     @BeforeMethod
-    public void openDeltixuat() throws IOException {
-        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
-        scatterPlot = new ScatterPlot();
+    public void openMainPage() throws IOException {
         loginPage = new LoginPage();
-        loginPage.login("selenium_chrome","Axa@Demo");
+        loginPage.open();
+        loginPage.login(Settings.getUserName(), Settings.getUserPassword());
+        scatterPlot = new ScatterPlotPage();
     }
 
     @AfterMethod
-    public void closeDeltixuat() {
+    public void clenUp() {
         BrowserDriver.close();
     }
 
@@ -38,45 +38,39 @@ public class CaseScatterPlotTest {
     @DataProvider(name = "attributeNames")
     public Object[][] attributeNamesProvider() {
         return new Object[][]{
-                {"Size", "Avg fill price"},
+                {"Price", "Exec size"},
                 {"Exec size", "Num of executions"},
                 {"Avg fill price", "Participation rate"},
-                {"Exec size", "Size"},
-                {"Execution price volatility", "Exec size"},
-
+                {"Num of executions", "Size"},
+                {"Size", "Avg fill price"},
 
 
         };
     }
 
-    @Description("Change X Attribute." +
+    @Description("Open scatter-plot" +
+            "Select x Attribute." +
+            "Select Y Attribute." +
             "Check that:" +
-            "values of axes are updated" +
-            "name of the X-axis changed to X Attribute" +
-            "Change Y Attribute.\n" +
-            "Check that:" +
-            "grid is collapsed" +
-            "values are updated" +
-            "name of the Y-axis is changed to Y Attribute" +
-            "Repeat steps 1-4 for all attributes.")
+            "The names of the axes coincide with the names of the attributes" +
+            "When changing attributes, the coordinate axis changes" +
+            "Coordinate axis is displayed")
     @Test(dataProvider = "attributeNames")
-    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException, InterruptedException {
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) {
 
         scatterPlot.scatterClick();
-        scatterPlot.setInterval();
 
 
         String initialXAxis = scatterPlot.getXAxis();
         String initialYAxis = scatterPlot.getYAxis();
-
 
         scatterPlot.xAttributeSelect(xAttributeName);
         scatterPlot.yAttributeSelect(yAttributeName);
 
         SoftAssert soft = new SoftAssert();
         soft.assertTrue(scatterPlot.getBubbles());
-        soft.assertEquals(scatterPlot.checkLabelX(), scatterPlot.checkXAttribute());
-        soft.assertEquals(scatterPlot.checkLabelY(), scatterPlot.checkYAttribute());
+        soft.assertEquals(scatterPlot.isDisplayedLabelX(), scatterPlot.isDisplayedXAttribute());
+        soft.assertEquals(scatterPlot.isDisplayedLabelY(), scatterPlot.isDisplayedYAttribute());
 
 
         String updatedXAxis = scatterPlot.getXAxis();

@@ -1,6 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
+import com.miskevich.driver.Settings;
 import com.miskevich.pages.HistogramPage;
 import com.miskevich.pages.LoginPage;
 import io.qameta.allure.Description;
@@ -12,7 +13,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertTrue;
 
 public class CaseHistogramTest {
@@ -21,28 +21,27 @@ public class CaseHistogramTest {
 
     LoginPage loginPage;
 
-    private String PATTERN_COUNT = "Count: \\d+";
+    private String COUNT_PATTERN = "Count: \\d+";
 
-    private String PATTERN_AVG = "Avg fill price: [\\[,\\(]\\d+\\.\\d+, \\d+\\.\\d+[),\\]]";
+    private String AVG_PATTERN = "Avg fill price: [\\[,\\(]\\d+\\.\\d+, \\d+\\.\\d+[),\\]]";
 
 
     @BeforeMethod
-    public void openDeltixuat() throws IOException {
-        BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
-        histogramPage = new HistogramPage();
+    public void openMainPage() throws IOException {
         loginPage = new LoginPage();
-        loginPage.login("selenium_chrome","Axa@Demo");
+        loginPage.open();
+        loginPage.login(Settings.getUserName(), Settings.getUserPassword());
+        histogramPage = new HistogramPage();
     }
 
     @AfterMethod
-    public void closeDeltixuat() {
+    public void cleanUp() {
         BrowserDriver.close();
     }
 
-    @Description("Hover over a bar." +
-            "Check boundaries and number of orders are displayed." +
-            "Click on the bar." +
-            "Repeat steps 1-4 for all bars.")
+    @Description("Open histogram." +
+            "Hover over the columns." +
+            "Values are displayed.")
     @Test
     public void testHistogram() {
 
@@ -59,8 +58,8 @@ public class CaseHistogramTest {
             histogramPage.getTooltip();
             String borders = histogramPage.getBordersText();
             String count = histogramPage.getCountText();
-            assertTrue(borders.matches(PATTERN_AVG), borders);
-            assertTrue(count.matches(PATTERN_COUNT), count);
+            assertTrue(borders.matches(AVG_PATTERN), borders);
+            assertTrue(count.matches(COUNT_PATTERN), count);
 
         });
     }

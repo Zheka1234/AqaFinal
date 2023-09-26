@@ -1,6 +1,7 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class OrdersGridPage extends BasePage {
     private WebElement buttonFilter;
 
     @FindBy(xpath = "//div[@class='ag-column-tool-panel-container']//*[@title='Id']/preceding-sibling::span")
-    private WebElement clickId;
+    private WebElement clickIdFilter;
 
     @FindBy(xpath = "//span[@ref='eText'][contains(text(),'Id')]")
     private WebElement displayIdCheck;
@@ -32,34 +33,29 @@ public class OrdersGridPage extends BasePage {
     private WebElement moveClick;
 
     @FindBy(xpath = "//div[@col-id='orderType']//span[@ref='eMenu']")
-    private WebElement columClick;
+    private WebElement columClicktype;
 
     @FindBy(xpath = "//span[@class='ag-icon ag-icon-columns']")
     private WebElement thirdVersionOfTheMenu;
 
     @FindBy(xpath = "//div[@class='ag-menu-column-select-wrapper']//*[@title='Id']/preceding-sibling::span")
-    private WebElement columClickIdColum;
+    private WebElement columClickIdColumType;
 
-
-    public boolean getClickFilter() {
-        log.info("getClickFilter " + buttonFilter.isDisplayed());
+    @Step("Click filter")
+    public void clickFilter() {
+        log.info("Click Filter ");
         buttonFilter.click();
-        return buttonFilter.isDisplayed();
     }
 
-
-    public void getCliCkIdFilter() {
-        log.info("getCliCkIdFilter start");
-        clickId.click();
+    @Step("Click on the id in filter")
+    public void clickIdFilter() {
+        log.info("Click on the id in filter");
+        clickIdFilter.click();
     }
 
-    public boolean displayIdCheck() {
-        log.info("display id colum check " + displayIdCheck.isDisplayed());
-        return displayIdCheck.isDisplayed();
-    }
-
-    public boolean displayIdCheckFalse() {
-        log.info("display id colum check false ");
+    @Step("Id colum appears/disappears")
+    public boolean isDisplayIdColumAppearsDisappears() {
+        log.info("display id colum appears/disappears ");
         try {
             if (displayIdCheckFalse.isDisplayed()) {
                 return true;
@@ -69,37 +65,40 @@ public class OrdersGridPage extends BasePage {
         }
     }
 
-    public void tollPanelClickOff() {
-        log.info("check the column on the instrument panel off");
+    @Step("Click in the toll panel")
+    public void tollPanelClick() {
+        log.info("click on the tool panel");
         toolPanel.click();
+    }
+
+    @Step("Click on id in the tool panel")
+    public void tollPanelClickId() {
+        log.info("Click on id in the tool panel");
+
         toolPanelClickId.click();
     }
 
-    public void tollPanelClickOn() {
-        log.info("check the column on the instrument panel on");
-
-        toolPanelClickId.click();
-
-    }
-
-    public void columClick() throws IOException {
-        log.info("Open filter for any column and switch to the 3rd tab");
+    @Step("Hover over the Type name column and click on menu")
+    public void columClickType() {
+        log.info("Hover over the Type name column and click on menu");
         Actions actions = new Actions(BrowserDriver.getDriver());
         actions.moveToElement(moveClick).perform();
-        columClick.click();
+        columClicktype.click();
 
 
     }
 
+    @Step("In the menu of the column named type, click on the third element")
     public void thirdVersionOfTheMenu() {
-        log.info("third version of the menu ");
+        log.info("In the menu of the column named type, click on the third element");
         thirdVersionOfTheMenu.click();
 
     }
 
-    public void columClickIdColum() {
-        log.info("click on ID in menu 3 ");
-        columClickIdColum.click();
+    @Step("Click on the ID in the tray menu of the column named type")
+    public void columClickIdColumType() {
+        log.info("Click on the ID in the tray menu of the column named type");
+        columClickIdColumType.click();
     }
 
 

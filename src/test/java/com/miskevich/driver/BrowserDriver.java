@@ -31,6 +31,7 @@ public class BrowserDriver {
         return properties;
     }
 
+
     public static WebDriver getDriver() throws IOException {
         if (driver == null) {
             initDriver();
@@ -40,7 +41,7 @@ public class BrowserDriver {
 
     public static void close() {
         if (driver != null) {
-            driver.close();
+            driver.quit();
             driver = null;
         }
     }

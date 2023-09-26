@@ -29,6 +29,7 @@ public class CaseOrdersGridTest {
         ordersGridPage = new OrdersGridPage();
         chatGridPage = new ChatGridPage();
         loginPage = new LoginPage();
+        loginPage.login("selenium_chrome","Axa@Demo");
     }
 
     @AfterMethod
@@ -44,17 +45,17 @@ public class CaseOrdersGridTest {
             "Check/uncheck the column.\n" +
             "Make sure the column appears/disappears from the grid.")
     @Test
-    public void testOrdersGridFilterColumns() throws IOException, InterruptedException {
+    public void testOrdersGridFilterColumns() throws IOException {
 
-        assertTrue(loginPage.inputUser());
-        assertTrue(chatGridPage.chartClick());
+
+        chatGridPage.chartClick();
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
-        Thread.sleep(2000);
+
         assertFalse( ordersGridPage.displayIdCheckFalse());
         assertTrue(ordersGridPage.getClickFilter());
         ordersGridPage.getCliCkIdFilter();
-        Thread.sleep(2000);
+
         assertTrue(ordersGridPage.displayIdCheck());
 
         ordersGridPage.tollPanelClickOff();

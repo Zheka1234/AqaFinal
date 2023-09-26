@@ -26,6 +26,7 @@ public class CaseScatterPlotTest {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         scatterPlot = new ScatterPlot();
         loginPage = new LoginPage();
+        loginPage.login("selenium_chrome","Axa@Demo");
     }
 
     @AfterMethod
@@ -37,24 +38,12 @@ public class CaseScatterPlotTest {
     @DataProvider(name = "attributeNames")
     public Object[][] attributeNamesProvider() {
         return new Object[][]{
-                {"Size", "Exec size"},
+                {"Size", "Avg fill price"},
                 {"Exec size", "Num of executions"},
-                {"Avg fill price", "Execution price volatility"},
-                {"Exec size", "Permanent market impact"},
-                {"Price", "Exec size"},
-                {"Execution price volatility", "Avg fill price"},
-                {"Realized market impact", "Shortfall"},
-                {"Permanent market impact", "Permanent market impact"},
-                {"Participation rate", "Exec size"},
-                {"Shortfall", "Num of executions"},
-                {"Multiplier", "Execution price volatility"},
-                {"Tick size", "Permanent market impact"},
-                {"Currency code", "Exec size"},
-                {"Sequence number", "Num of executions"},
-                {"Db sequence number", "Execution price volatility"},
-                {"Benchmark price", "Permanent market impact"},
-                {"Price imp. (ticks)", "Execution price volatility"},
-                {"Price imp. (amount)", "Permanent market impact"},
+                {"Avg fill price", "Participation rate"},
+                {"Exec size", "Size"},
+                {"Execution price volatility", "Exec size"},
+
 
 
         };
@@ -71,13 +60,15 @@ public class CaseScatterPlotTest {
             "name of the Y-axis is changed to Y Attribute" +
             "Repeat steps 1-4 for all attributes.")
     @Test(dataProvider = "attributeNames")
-    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException {
-        loginPage.inputUser();
+    public void scatterPlotTest(String xAttributeName, String yAttributeName) throws IOException, InterruptedException {
+
         scatterPlot.scatterClick();
         scatterPlot.setInterval();
 
+
         String initialXAxis = scatterPlot.getXAxis();
         String initialYAxis = scatterPlot.getYAxis();
+
 
         scatterPlot.xAttributeSelect(xAttributeName);
         scatterPlot.yAttributeSelect(yAttributeName);

@@ -31,6 +31,7 @@ public class CaseHistogramTest {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         histogramPage = new HistogramPage();
         loginPage = new LoginPage();
+        loginPage.login("selenium_chrome","Axa@Demo");
     }
 
     @AfterMethod
@@ -44,7 +45,7 @@ public class CaseHistogramTest {
             "Repeat steps 1-4 for all bars.")
     @Test
     public void testHistogram() {
-        assertTrue(loginPage.inputUser());
+
         assertTrue(histogramPage.histogramClick());
         List<WebElement> barContainers = histogramPage.getBars();
         assertTrue(barContainers.size() > 0);

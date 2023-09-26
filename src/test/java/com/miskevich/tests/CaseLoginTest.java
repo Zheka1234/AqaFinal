@@ -1,7 +1,7 @@
 package com.miskevich.tests;
 
 import com.miskevich.driver.BrowserDriver;
-import com.miskevich.pages.DeltixPage;
+import com.miskevich.pages.MainPage;
 import com.miskevich.pages.LoginPage;
 import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
@@ -19,13 +19,16 @@ public class CaseLoginTest {
 
     LoginPage loginPage;
 
-    DeltixPage deltixPage;
+    MainPage mainPage;
 
     @BeforeMethod
     public void openDeltixuat() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         loginPage = new LoginPage();
-        deltixPage = new DeltixPage();
+
+        loginPage.login("selenium_chrome","Axa@Demo");
+        mainPage = new MainPage();
+
     }
 
     @AfterMethod
@@ -52,13 +55,12 @@ public class CaseLoginTest {
             "Application Toolbar with Summary, Grid & chart, Histogram, Scatter-plot and Reports tabs")
     @Test(dataProvider = "checkSection")
     public void caseLoginTest(String sectionName) throws IOException {
-        assertTrue(loginPage.inputUser());
-        assertTrue(deltixPage.checkSetting());
-        assertTrue(deltixPage.checkBenchmarkSelection());
-        deltixPage.section(sectionName);
+        assertTrue(mainPage.isSettingDisplayed());
+        assertTrue(mainPage.iskBenchmarkSelectionDisplayed());
+        mainPage.section(sectionName);
 
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(deltixPage.section(sectionName).isDisplayed());
+        soft.assertTrue(mainPage.section(sectionName).isDisplayed());
 
         soft.assertAll();
 

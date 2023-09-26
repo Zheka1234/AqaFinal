@@ -12,7 +12,6 @@ import java.io.IOException;
 
 import static com.miskevich.driver.BrowserDriver.getMyProperties;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class CaseChatTest {
 
@@ -22,40 +21,34 @@ public class CaseChatTest {
 
 
     @BeforeMethod
-    public void openDeltixuat() throws IOException {
+    public void openMainPage() throws IOException {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         chatPage = new ChatGridPage();
         loginPage = new LoginPage();
+        loginPage.login("selenium_chrome", "Axa@Demo");
 
     }
 
     @AfterMethod
-    public void closeDeltixuat() {
+    public void closeUp() {
         BrowserDriver.close();
     }
 
-    @Description("Select an order." +
-            "Click on + Lines." +
-            "Toggle the visibility of Avg fill price and Mid price in the Prices section." +
-            "Select an order with executions." +
-            "Check that:" +
-            "the value of Exec in the tooltip matches with Avg fill price in the Interactive legend control, Order info string and in the grid" +
-            "color of Exec line matches with text color of Price imp. (ticks) and Price imp. (amount)" +
-            "the value of Mid price in the Interactive legend control matches with its value in the tooltip")
+    @Description("Open Chat Grid." +
+            "Click on order." +
+            "Compare the Mid price order value in the table below and on the right in it" +
+            "Compare the Mid price color of the icons in the table below and on the right in it" +
+            "Compare the AVG price value in the table below with chat description" +
+            "Compare the AVG price value in the sub-table with the AVG price understatement in the main table")
     @Test
     public void testChat() {
-
-        assertTrue(loginPage.inputUser());
-        assertTrue(chatPage.chartClick());
+        chatPage.chartClick();
         chatPage.orderClick();
+
         assertEquals(chatPage.getMidPriceTooltip(), chatPage.getMidPrice());
-
-        assertEquals(chatPage.getAvgPrice(), chatPage.underChat());
-
-        assertEquals(chatPage.getAvgPrice(), chatPage.getAvgTablePrice());
-
         assertEquals(chatPage.getMidColor(), chatPage.getMidPriceColor());
-
+        assertEquals(chatPage.getAvgPrice(), chatPage.chatDescription());
+        assertEquals(chatPage.getAvgPrice(), chatPage.getAvgTablePrice());
 
     }
 }

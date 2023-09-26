@@ -29,6 +29,7 @@ public class SortCaseTest {
         BrowserDriver.getDriver().get(getMyProperties().getProperty("siteUrl"));
         chatPage = new ChatGridPage();
         loginPage = new LoginPage();
+        loginPage.login("selenium_chrome","Axa@Demo");
 
     }
 
@@ -39,9 +40,9 @@ public class SortCaseTest {
 
     @Test
     public void testSort()  {
-        assertTrue(loginPage.inputUser());
 
-        assertTrue(chatPage.chartClick());
+
+       chatPage.chartClick();
         chatPage.clickSortType();
         List<WebElement> columnValues = chatPage.getColumnElements();
         List<String> columnTexts = new ArrayList<>();

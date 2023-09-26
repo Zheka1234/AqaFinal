@@ -1,6 +1,7 @@
 package com.miskevich.pages;
 
 import com.miskevich.driver.BrowserDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,16 +19,15 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button")
     private WebElement button;
 
-
-    public boolean inputUser() {
-        log.info("inputUser start");
+    @Step("Login to the site")
+    public void login(String setLogin, String setPassword) {
+        log.info("Login to the site");
         loginUser.click();
-        loginUser.sendKeys("selenium_chrome");
+        loginUser.sendKeys(setLogin);
         passwordUser.click();
-        passwordUser.sendKeys("Axa@Demo");
+        passwordUser.sendKeys(setPassword);
         button.click();
-        log.info("inputUser good");
-        return button.isDisplayed();
+
     }
 
     public LoginPage() throws IOException {

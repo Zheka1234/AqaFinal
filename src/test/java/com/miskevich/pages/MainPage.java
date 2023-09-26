@@ -8,13 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class DeltixPage extends BasePage {
+public class MainPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='d-flex align-items-center benchmark-selection']")
     private WebElement benchmarkSelection;
 
     @FindBy(xpath = "//a[@href='/settings']")
     private WebElement settingButton;
+
 
     public WebElement section(String sectionName) throws IOException {
         WebElement element = BrowserDriver.getDriver()
@@ -23,19 +24,19 @@ public class DeltixPage extends BasePage {
         return element;
     }
 
-    public boolean checkSetting() {
-        log.info("checkSetting start" + settingButton.isDisplayed());
+    public boolean isSettingDisplayed() {
+        log.info("isSettingDisplayed start" + settingButton.isDisplayed());
 
         return settingButton.isDisplayed();
     }
 
 
-    public boolean checkBenchmarkSelection() {
-        log.info("checkBenchmarkSelection start" + benchmarkSelection.isDisplayed());
+    public boolean iskBenchmarkSelectionDisplayed() {
+        log.info("iskBenchmarkSelectionDisplayed start" + benchmarkSelection.isDisplayed());
         return benchmarkSelection.isDisplayed();
     }
 
-    public DeltixPage() throws IOException {
+    public MainPage() throws IOException {
         PageFactory.initElements(BrowserDriver.getDriver(), this);
     }
 }

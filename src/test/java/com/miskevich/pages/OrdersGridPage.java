@@ -11,7 +11,7 @@ import java.io.IOException;
 public class OrdersGridPage extends BasePage {
 
     @FindBy(xpath = "//span[@class='ml-1'][contains(text(),'Filters')]")
-    private WebElement clickFilter;
+    private WebElement buttonFilter;
 
     @FindBy(xpath = "//div[@class='ag-column-tool-panel-container']//*[@title='Id']/preceding-sibling::span")
     private WebElement clickId;
@@ -26,12 +26,12 @@ public class OrdersGridPage extends BasePage {
     private WebElement toolPanel;
 
     @FindBy(xpath = "//*[@title='Id']/preceding-sibling::span")
-    private WebElement typeClickId;
+    private WebElement toolPanelClickId;
 
     @FindBy(xpath = "//div[@col-id='orderId']")
     private WebElement moveClick;
 
-    @FindBy(xpath = "//div[@col-id='orderId']//span[@ref='eMenu']")
+    @FindBy(xpath = "//div[@col-id='orderType']//span[@ref='eMenu']")
     private WebElement columClick;
 
     @FindBy(xpath = "//span[@class='ag-icon ag-icon-columns']")
@@ -42,9 +42,9 @@ public class OrdersGridPage extends BasePage {
 
 
     public boolean getClickFilter() {
-        log.info("getClickFilter " + clickFilter.isDisplayed());
-        clickFilter.click();
-        return clickFilter.isDisplayed();
+        log.info("getClickFilter " + buttonFilter.isDisplayed());
+        buttonFilter.click();
+        return buttonFilter.isDisplayed();
     }
 
 
@@ -60,20 +60,25 @@ public class OrdersGridPage extends BasePage {
 
     public boolean displayIdCheckFalse() {
         log.info("display id colum check false ");
-        displayIdCheckFalse.isDisplayed();
-        return false;
+        try {
+            if (displayIdCheckFalse.isDisplayed()) {
+                return true;
+            } else return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
     public void tollPanelClickOff() {
         log.info("check the column on the instrument panel off");
         toolPanel.click();
-        typeClickId.click();
+        toolPanelClickId.click();
     }
 
     public void tollPanelClickOn() {
         log.info("check the column on the instrument panel on");
-        typeClickId.click();
-        toolPanel.click();
+
+        toolPanelClickId.click();
 
     }
 

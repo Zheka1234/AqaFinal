@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
@@ -22,6 +21,5 @@ public class BasePage {
             .pollingEvery(Duration.ofMillis(500))
             .ignoring(NoSuchElementException.class);
 
-    public BasePage() throws IOException {
-    }
+
 }

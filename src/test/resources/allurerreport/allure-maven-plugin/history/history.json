@@ -1,0 +1,313 @@
+{
+  "cc4ba2db51c12b3d480d450b75cc685e" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d04afee95ead5b74",
+      "status" : "failed",
+      "statusDetails" : "The following asserts failed:\n\tX-axis values are not updated",
+      "time" : {
+        "start" : 1695821264529,
+        "stop" : 1695821266906,
+        "duration" : 2377
+      }
+    } ]
+  },
+  "a09fb3648280e3b09a93a9e6eeee5558" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "653c414bf1c30e24",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821146647,
+        "stop" : 1695821148598,
+        "duration" : 1951
+      }
+    } ]
+  },
+  "6d7a0b1e1383ae1096b0129c856fe94" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "193c690d3f018d85",
+      "status" : "skipped",
+      "statusDetails" : "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=116.0.5845.188)\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [91b802fc781312de34f347e883c7d44c, findElement {using=xpath, value=//input[@formcontrolname='username']}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49753/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 91b802fc781312de34f347e883c7d44c",
+      "time" : {
+        "start" : 1695821226776,
+        "stop" : 1695821226777,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2c2efeda2cb07deb75d115f92e801469" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "64bee7d8f10c37c7",
+      "status" : "broken",
+      "statusDetails" : "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"g[class$='MID_PRICE']>text:last-child\"}\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [da1e9fb43d6dac9de8c5431b30f57fb1, findElement {using=css selector, value=g[class$='MID_PRICE']>text:last-child}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49550}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49550/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: da1e9fb43d6dac9de8c5431b30f57fb1",
+      "time" : {
+        "start" : 1695821094580,
+        "stop" : 1695821101865,
+        "duration" : 7285
+      }
+    } ]
+  },
+  "f322a15a938a2843850c289276d7c7ff" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "27e39b184d8b4107",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821131207,
+        "stop" : 1695821132731,
+        "duration" : 1524
+      }
+    } ]
+  },
+  "a9c5b87363bfe127eb0504f26b49f609" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "35253d24a8bde54a",
+      "status" : "broken",
+      "statusDetails" : "element click intercepted: Element <div _ngcontent-feu-c9=\"\" class=\"app-title\">...</div> is not clickable at point (398, 133). Other element would receive the click: <div _ngcontent-feu-c4=\"\" class=\"position-relative post-trade h-100 loading\">...</div>\n  (Session info: chrome=116.0.5845.188)\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [67bf493b43599c8fbdf5421fd6487982, clickElement {id=E2A736497051401010BD60CD2D5A4972_element_13}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49828}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on windows (67bf493b43599c8fbdf5421fd6487982)] -> xpath: //div[@class='app-title'][contains(text(),'Scatter-plot')]]\nSession ID: 67bf493b43599c8fbdf5421fd6487982",
+      "time" : {
+        "start" : 1695821279904,
+        "stop" : 1695821281498,
+        "duration" : 1594
+      }
+    } ]
+  },
+  "85fb1106936f18c9cab4a53be1d255c3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ac00df2159b66cc6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821165833,
+        "stop" : 1695821172052,
+        "duration" : 6219
+      }
+    } ]
+  },
+  "44456290891f92f54f9e9289947d6467" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a2efa00b9f33b6ca",
+      "status" : "broken",
+      "statusDetails" : "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=116.0.5845.188)\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [91b802fc781312de34f347e883c7d44c, findElement {using=xpath, value=//input[@formcontrolname='username']}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49753/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 91b802fc781312de34f347e883c7d44c",
+      "time" : {
+        "start" : 1695821226771,
+        "stop" : 1695821226772,
+        "duration" : 1
+      }
+    } ]
+  },
+  "31ee43725376a1c3c51545dc267f8629" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b47c27df2a43a471",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821153743,
+        "stop" : 1695821160600,
+        "duration" : 6857
+      }
+    } ]
+  },
+  "f345682f259dceeab5f4a77cd04a6e0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2e3b60902a80bec5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821139165,
+        "stop" : 1695821140382,
+        "duration" : 1217
+      }
+    } ]
+  },
+  "f40b9557d6ad4f061ae4321722aad512" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "209dd7a080565135",
+      "status" : "broken",
+      "statusDetails" : "stale element reference: stale element not found\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [8a109fdb821fd591b33d15714b50eb19, getElementText {id=D6FA501CA9DC2BF070C5AEFA4700299A_element_39}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49791/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on windows (8a109fdb821fd591b33d15714b50eb19)] -> css selector: g[class='x axis']]\nSession ID: 8a109fdb821fd591b33d15714b50eb19",
+      "time" : {
+        "start" : 1695821251611,
+        "stop" : 1695821253809,
+        "duration" : 2198
+      }
+    } ]
+  },
+  "bd34afb80990671558850cfc91818e9b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fc4755a1fe8d84e2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821177892,
+        "stop" : 1695821184526,
+        "duration" : 6634
+      }
+    } ]
+  },
+  "63a02e2d4d94604adecaa6726c722ab9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a90c3ebe385ba8d8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821116081,
+        "stop" : 1695821117562,
+        "duration" : 1481
+      }
+    } ]
+  },
+  "fa6217bde521d4a21733a689aff925f0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "191f790b1646e143",
+      "status" : "broken",
+      "statusDetails" : "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Exec size')]\"}\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [f086b1cdc1408f093a8515056dfda8f7, findElement {using=xpath, value=//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Exec size')]}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49773}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49773/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: f086b1cdc1408f093a8515056dfda8f7",
+      "time" : {
+        "start" : 1695821231892,
+        "stop" : 1695821238703,
+        "duration" : 6811
+      }
+    } ]
+  },
+  "96c16df407e2b6ae1bfbcfda5e4c542b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "19477b0f9634cadc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821107940,
+        "stop" : 1695821110112,
+        "duration" : 2172
+      }
+    } ]
+  },
+  "351648f66164bcfe89b945f59163b9e0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8392d83da552a84b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1695821123168,
+        "stop" : 1695821124770,
+        "duration" : 1602
+      }
+    } ]
+  }
+}

@@ -3,9 +3,6 @@
 <suite name="Parser Suite" verbose="1" configfailurepolicy="continue">
     <test name="test for parser">
         <groups>
-            <run>
-                <include name="parser"/>
-            </run>
         </groups>
         <classes>
             <class name="com.miskevich.tests.CaseChatTest"/>

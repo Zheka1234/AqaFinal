@@ -1,0 +1,115 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"g[class$='MID_PRICE']>text:last-child\"}\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [da1e9fb43d6dac9de8c5431b30f57fb1, findElement {using=css selector, value=g[class$='MID_PRICE']>text:last-child}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49550}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49550/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: da1e9fb43d6dac9de8c5431b30f57fb1",
+      "children" : [ {
+        "name" : "testChat",
+        "uid" : "64bee7d8f10c37c7",
+        "parentUid" : "e0c50445ec9f315ea94b3dcd7bc16798",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821094580,
+          "stop" : 1695821101865,
+          "duration" : 7285
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e0c50445ec9f315ea94b3dcd7bc16798"
+    }, {
+      "name" : "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=116.0.5845.188)\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [91b802fc781312de34f347e883c7d44c, findElement {using=xpath, value=//input[@formcontrolname='username']}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49753/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 91b802fc781312de34f347e883c7d44c",
+      "children" : [ {
+        "name" : "openMainPage",
+        "uid" : "a2efa00b9f33b6ca",
+        "parentUid" : "40f541f43fb1795b2446a4d41bdf95b3",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821226771,
+          "stop" : 1695821226772,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "40f541f43fb1795b2446a4d41bdf95b3"
+    }, {
+      "name" : "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Exec size')]\"}\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [f086b1cdc1408f093a8515056dfda8f7, findElement {using=xpath, value=//li[@class='autocomplete-dropdown-item']//a[contains(text(),'Exec size')]}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49773}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49773/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: f086b1cdc1408f093a8515056dfda8f7",
+      "children" : [ {
+        "name" : "scatterPlotTest",
+        "uid" : "191f790b1646e143",
+        "parentUid" : "667176505c443155630641f6c11e6c87",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821231892,
+          "stop" : 1695821238703,
+          "duration" : 6811
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Exec size", "Num of executions" ]
+      } ],
+      "uid" : "667176505c443155630641f6c11e6c87"
+    }, {
+      "name" : "stale element reference: stale element not found\n  (Session info: chrome=116.0.5845.188)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [8a109fdb821fd591b33d15714b50eb19, getElementText {id=D6FA501CA9DC2BF070C5AEFA4700299A_element_39}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49791/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on windows (8a109fdb821fd591b33d15714b50eb19)] -> css selector: g[class='x axis']]\nSession ID: 8a109fdb821fd591b33d15714b50eb19",
+      "children" : [ {
+        "name" : "scatterPlotTest",
+        "uid" : "209dd7a080565135",
+        "parentUid" : "2e2811e3feeba08fbd53b4696de8e6e0",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821251611,
+          "stop" : 1695821253809,
+          "duration" : 2198
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Avg fill price", "Participation rate" ]
+      } ],
+      "uid" : "2e2811e3feeba08fbd53b4696de8e6e0"
+    }, {
+      "name" : "element click intercepted: Element <div _ngcontent-feu-c9=\"\" class=\"app-title\">...</div> is not clickable at point (398, 133). Other element would receive the click: <div _ngcontent-feu-c4=\"\" class=\"position-relative post-trade h-100 loading\">...</div>\n  (Session info: chrome=116.0.5845.188)\nBuild info: version: '4.11.0', revision: '040bc5406b'\nSystem info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [67bf493b43599c8fbdf5421fd6487982, clickElement {id=E2A736497051401010BD60CD2D5A4972_element_13}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\\Users\\PROFES~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49828}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on windows (67bf493b43599c8fbdf5421fd6487982)] -> xpath: //div[@class='app-title'][contains(text(),'Scatter-plot')]]\nSession ID: 67bf493b43599c8fbdf5421fd6487982",
+      "children" : [ {
+        "name" : "scatterPlotTest",
+        "uid" : "35253d24a8bde54a",
+        "parentUid" : "a6e0ee3591e53c80c9fcbcd76422321c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821279904,
+          "stop" : 1695821281498,
+          "duration" : 1594
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Size", "Avg fill price" ]
+      } ],
+      "uid" : "a6e0ee3591e53c80c9fcbcd76422321c"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "The following asserts failed:\n\tX-axis values are not updated",
+      "children" : [ {
+        "name" : "scatterPlotTest",
+        "uid" : "d04afee95ead5b74",
+        "parentUid" : "db85bef790b7052811a7ad8c8e1f2590",
+        "status" : "failed",
+        "time" : {
+          "start" : 1695821264529,
+          "stop" : 1695821266906,
+          "duration" : 2377
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Num of executions", "Size" ]
+      } ],
+      "uid" : "db85bef790b7052811a7ad8c8e1f2590"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

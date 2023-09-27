@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "810eda78c32801279dc03f4444790e08",
+    "name" : "Parser Suite",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 5,
+      "skipped" : 1,
+      "passed" : 9,
+      "unknown" : 0,
+      "total" : 16
+    }
+  } ]
+}

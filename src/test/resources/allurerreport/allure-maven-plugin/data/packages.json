@@ -1,0 +1,237 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.miskevich.tests",
+    "children" : [ {
+      "name" : "CaseChatTest",
+      "children" : [ {
+        "name" : "testChat",
+        "uid" : "64bee7d8f10c37c7",
+        "parentUid" : "11695e404d60905d604eb4f6e350f3f2",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821094580,
+          "stop" : 1695821101865,
+          "duration" : 7285
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "11695e404d60905d604eb4f6e350f3f2"
+    }, {
+      "name" : "CaseHistogramTest",
+      "children" : [ {
+        "name" : "testHistogram",
+        "uid" : "19477b0f9634cadc",
+        "parentUid" : "64703f6ca2774ea5d0e3b622f31417df",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821107940,
+          "stop" : 1695821110112,
+          "duration" : 2172
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "64703f6ca2774ea5d0e3b622f31417df"
+    }, {
+      "name" : "CaseLoginTest",
+      "children" : [ {
+        "name" : "caseLoginTest",
+        "uid" : "a90c3ebe385ba8d8",
+        "parentUid" : "d563ddd7373c4ff9465454695288eced",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821116081,
+          "stop" : 1695821117562,
+          "duration" : 1481
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Summary" ]
+      }, {
+        "name" : "caseLoginTest",
+        "uid" : "8392d83da552a84b",
+        "parentUid" : "d563ddd7373c4ff9465454695288eced",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821123168,
+          "stop" : 1695821124770,
+          "duration" : 1602
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Grid & chart" ]
+      }, {
+        "name" : "caseLoginTest",
+        "uid" : "27e39b184d8b4107",
+        "parentUid" : "d563ddd7373c4ff9465454695288eced",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821131207,
+          "stop" : 1695821132731,
+          "duration" : 1524
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Histogram" ]
+      }, {
+        "name" : "caseLoginTest",
+        "uid" : "2e3b60902a80bec5",
+        "parentUid" : "d563ddd7373c4ff9465454695288eced",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821139165,
+          "stop" : 1695821140382,
+          "duration" : 1217
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Scatter-plot" ]
+      }, {
+        "name" : "caseLoginTest",
+        "uid" : "653c414bf1c30e24",
+        "parentUid" : "d563ddd7373c4ff9465454695288eced",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821146647,
+          "stop" : 1695821148598,
+          "duration" : 1951
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Reports" ]
+      } ],
+      "uid" : "d563ddd7373c4ff9465454695288eced"
+    }, {
+      "name" : "CaseOrdersGridTest",
+      "children" : [ {
+        "name" : "testColumFilter",
+        "uid" : "b47c27df2a43a471",
+        "parentUid" : "90b201e374a7d81c1128158447b0a9fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821153743,
+          "stop" : 1695821160600,
+          "duration" : 6857
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testColumToolPanel",
+        "uid" : "ac00df2159b66cc6",
+        "parentUid" : "90b201e374a7d81c1128158447b0a9fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821165833,
+          "stop" : 1695821172052,
+          "duration" : 6219
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testOrdersGridFilterColumns",
+        "uid" : "fc4755a1fe8d84e2",
+        "parentUid" : "90b201e374a7d81c1128158447b0a9fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1695821177892,
+          "stop" : 1695821184526,
+          "duration" : 6634
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "90b201e374a7d81c1128158447b0a9fb"
+    }, {
+      "name" : "CaseScatterPlotTest",
+      "children" : [ {
+        "name" : "openMainPage",
+        "uid" : "a2efa00b9f33b6ca",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821226771,
+          "stop" : 1695821226772,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "scatterPlotTest",
+        "uid" : "193c690d3f018d85",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1695821226776,
+          "stop" : 1695821226777,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "scatterPlotTest",
+        "uid" : "191f790b1646e143",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821231892,
+          "stop" : 1695821238703,
+          "duration" : 6811
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Exec size", "Num of executions" ]
+      }, {
+        "name" : "scatterPlotTest",
+        "uid" : "209dd7a080565135",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821251611,
+          "stop" : 1695821253809,
+          "duration" : 2198
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Avg fill price", "Participation rate" ]
+      }, {
+        "name" : "scatterPlotTest",
+        "uid" : "d04afee95ead5b74",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "failed",
+        "time" : {
+          "start" : 1695821264529,
+          "stop" : 1695821266906,
+          "duration" : 2377
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Num of executions", "Size" ]
+      }, {
+        "name" : "scatterPlotTest",
+        "uid" : "35253d24a8bde54a",
+        "parentUid" : "9d0c25c208c47ddadc0bd28339236bea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1695821279904,
+          "stop" : 1695821281498,
+          "duration" : 1594
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Size", "Avg fill price" ]
+      } ],
+      "uid" : "9d0c25c208c47ddadc0bd28339236bea"
+    } ],
+    "uid" : "com.miskevich.tests"
+  } ]
+}

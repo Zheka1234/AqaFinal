@@ -1,0 +1,248 @@
+{
+  "uid" : "b47c27df2a43a471",
+  "name" : "testColumFilter",
+  "fullName" : "com.miskevich.tests.CaseOrdersGridTest.testColumFilter",
+  "historyId" : "31ee43725376a1c3c51545dc267f8629",
+  "time" : {
+    "start" : 1695821153743,
+    "stop" : 1695821160600,
+    "duration" : 6857
+  },
+  "description" : "Open chat menuClick on filterClick idColum id disappearsClick on filterClick idColum id appears",
+  "descriptionHtml" : "<p>Open chat menuClick on filterClick idColum id disappearsClick on filterClick idColum id appears</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "openMainPage",
+    "time" : {
+      "start" : 1695821148731,
+      "stop" : 1695821153740,
+      "duration" : 5009
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open site",
+      "time" : {
+        "start" : 1695821149426,
+        "stop" : 1695821152186,
+        "duration" : 2760
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Login to the site",
+      "time" : {
+        "start" : 1695821152187,
+        "stop" : 1695821153734,
+        "duration" : 1547
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "setLogin",
+        "value" : "selenium_chrome"
+      }, {
+        "name" : "setPassword",
+        "value" : "Axa@Demo"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 2,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Open chat menuClick on filterClick idColum id disappearsClick on filterClick idColum id appears",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open menu Chat",
+      "time" : {
+        "start" : 1695821153743,
+        "stop" : 1695821155258,
+        "duration" : 1515
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Click filter",
+      "time" : {
+        "start" : 1695821155259,
+        "stop" : 1695821155308,
+        "duration" : 49
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Click on the id in filter",
+      "time" : {
+        "start" : 1695821155309,
+        "stop" : 1695821155353,
+        "duration" : 44
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Id colum appears/disappears",
+      "time" : {
+        "start" : 1695821155353,
+        "stop" : 1695821160417,
+        "duration" : 5064
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Click filter",
+      "time" : {
+        "start" : 1695821160417,
+        "stop" : 1695821160486,
+        "duration" : 69
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Click on the id in filter",
+      "time" : {
+        "start" : 1695821160486,
+        "stop" : 1695821160556,
+        "duration" : 70
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Id colum appears/disappears",
+      "time" : {
+        "start" : 1695821160556,
+        "stop" : 1695821160600,
+        "duration" : 44
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "cleanUp",
+    "time" : {
+      "start" : 1695821160601,
+      "stop" : 1695821160737,
+      "duration" : 136
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.miskevich.tests.CaseOrdersGridTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.miskevich.tests.CaseOrdersGridTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testColumFilter"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Parser Suite"
+  }, {
+    "name" : "suite",
+    "value" : "test for parser"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.miskevich.tests.CaseOrdersGridTest"
+  }, {
+    "name" : "host",
+    "value" : "User-PC"
+  }, {
+    "name" : "thread",
+    "value" : "14852@User-PC.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b47c27df2a43a471.json",
+  "parameterValues" : [ ]
+}

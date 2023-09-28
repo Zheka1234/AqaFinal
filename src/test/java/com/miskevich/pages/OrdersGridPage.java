@@ -50,6 +50,7 @@ public class OrdersGridPage extends BasePage {
     @Step("Click on the id in filter")
     public void clickIdFilter() {
         log.info("Click on the id in filter");
+        takeScreenshot();
         clickIdFilter.click();
     }
 
@@ -63,12 +64,14 @@ public class OrdersGridPage extends BasePage {
         } catch (Exception ex) {
             return false;
         }
+
     }
 
     @Step("Click in the toll panel")
     public void tollPanelClick() {
         log.info("click on the tool panel");
         toolPanel.click();
+        takeScreenshot();
     }
 
     @Step("Click on id in the tool panel")
@@ -92,6 +95,7 @@ public class OrdersGridPage extends BasePage {
     public void thirdVersionOfTheMenu() {
         log.info("In the menu of the column named type, click on the third element");
         thirdVersionOfTheMenu.click();
+        takeScreenshot();
 
     }
 
@@ -99,6 +103,7 @@ public class OrdersGridPage extends BasePage {
     public void columClickIdColumType() {
         log.info("Click on the ID in the tray menu of the column named type");
         columClickIdColumType.click();
+        takeScreenshot();
     }
 
 

@@ -73,17 +73,20 @@ public class ScatterPlotPage extends BasePage {
     public boolean getBubbles() {
         log.info("Get bubbles");
         bubbles.size();
+        takeScreenshot();
         return bubbles.size() > 0;
     }
 
     @Step("X axis changes")
     public String getXAxis() {
         log.warn("X axis remains the same" + xAxis);
+        takeScreenshot();
         return xAxis.getText();
     }
 
     @Step("Y axis changes")
     public String getYAxis() {
+        takeScreenshot();
         log.warn("Y axis remains the same" + yAxis);
         return yAxis.getText();
     }

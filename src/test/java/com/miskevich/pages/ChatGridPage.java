@@ -80,6 +80,7 @@ public class ChatGridPage extends BasePage {
 
     @Step("Get the value in your order in the table below on the right Mid price")
     public double getMidPriceTooltip() {
+        takeScreenshot();
         log.info("getMidPriceTooltip start");
 
         return Double.parseDouble(mid.getText());

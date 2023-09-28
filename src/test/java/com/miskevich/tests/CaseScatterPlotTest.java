@@ -38,7 +38,7 @@ CaseScatterPlotTest {
     @DataProvider(name = "attributeNames")
     public Object[][] attributeNamesProvider() {
         return new Object[][]{
-                {"Price", "Exec size"},
+                {"Avg fill price", "Exec size"},
                 {"Exec size", "Num of executions"},
                 {"Avg fill price", "Participation rate"},
                 {"Num of executions", "Size"},
